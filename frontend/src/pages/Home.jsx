@@ -14,7 +14,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-1900 to-slate-1900">
       {/* Animated background elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
@@ -39,7 +39,7 @@ const Home = () => {
                 <span className="text-white">Hi, I'm</span>
                 <br />
                 <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
-                  Arosha Wijekoon
+                  Arosha
                 </span>
               </h1>
               
@@ -48,8 +48,8 @@ const Home = () => {
               </h2>
               
               <p className="text-lg text-gray-300 mb-8 leading-relaxed max-w-xl">
-                Passionate Computer Science Undergraduate crafting modern web experiences. 
-                Specialized in building scalable applications with React, Spring Boot, and cloud technologies.
+                Passionate Computer Science Undergraduate Crafting Modern Web Experiences. 
+                Specialized in Building Scalable Applications with React, Spring Boot, and Cloud Technologies.
               </p>
 
               {/* CTA Buttons */}
@@ -132,7 +132,7 @@ const Home = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { value: '5+', label: 'Projects Built', color: 'from-purple-500 to-pink-500' },
-              { value: '8+', label: 'Technologies', color: 'from-pink-500 to-red-500' },
+              { value: '10+', label: 'Technologies', color: 'from-pink-500 to-red-500' },
               { value: '100%', label: 'Responsive', color: 'from-blue-500 to-cyan-500' },
               { value: 'Open', label: 'To Opportunities', color: 'from-green-500 to-emerald-500' },
             ].map((stat, index) => (
@@ -142,7 +142,7 @@ const Home = () => {
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300`}></div>
                 <div className="relative text-center">
-                  <div className={`text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}>
+                  <div className={`text-5xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}>
                     {stat.value}
                   </div>
                   <div className="text-gray-400 text-sm font-medium">{stat.label}</div>
@@ -156,7 +156,7 @@ const Home = () => {
       {/* Skills Section */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h3 className="text-3xl font-bold text-white text-center mb-12">
+          <h3 className="text-5xl font-bold text-white text-center mb-12">
             Tech <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Stack</span>
           </h3>
           

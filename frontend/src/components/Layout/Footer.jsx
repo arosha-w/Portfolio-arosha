@@ -4,7 +4,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-gradient-to-b from-slate-900 to-black text-white mt-20 overflow-hidden">
+    <footer className="relative bg-gradient-to-b from-slate-900 to-black text-white mt-15 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
@@ -14,11 +14,11 @@ const Footer = () => {
         <div className="py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0 text-center md:text-left">
-              <h3 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <h3 className="text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Lets Connect!
               </h3>
               <p className="text-gray-400 mt-2">
-                Open to opportunities in Full-Stack Development
+                Seeking opportunities in Full-Stack Development
               </p>
             </div>
 
