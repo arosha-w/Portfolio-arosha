@@ -2,8 +2,6 @@ import {
   GraduationCap, 
   Building2, 
   Calendar, 
-  Briefcase, 
-  Clock, 
   CheckCircle2, 
   Sparkles,
   Code2,
@@ -14,12 +12,13 @@ import {
   Music,
   Book,
   Gamepad2,
-  Award,
   TrendingUp,
   Users,
   Globe,
   Download,
-  Mail
+  Mail,
+  Zap,
+  Star
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -37,20 +36,6 @@ const About = () => {
     },
   ];
 
-  const experiences = [
-    {
-      role: 'Freelance Developer',
-      company: 'Self-Employed',
-      duration: '2022 - Present',
-      description: 'Built websites for small businesses and personal projects',
-      achievements: [
-        'Delivered 10+ successful projects',
-        'Maintained 5-star client rating',
-        'Reduced load time by 40% on average'
-      ]
-    }
-  ];
-
   const highlights = [
     'Full-Stack Development',
     'Problem Solving',
@@ -64,19 +49,13 @@ const About = () => {
     { name: 'JavaScript', level: 88, color: 'from-yellow-500 to-orange-500' },
     { name: 'Java', level: 82, color: 'from-red-500 to-pink-500' },
     { name: 'Tailwind CSS', level: 92, color: 'from-purple-500 to-pink-500' },
-    { name: 'Node.js', level: 80, color: 'from-green-600 to-lime-500' },
+    { name: 'Node.js', level: 70, color: 'from-green-600 to-lime-500' },
   ];
 
   const achievements = [
     {
-      icon: Award,
-      title: 'Deans List',
-      description: 'Academic excellence recognition',
-      color: 'from-yellow-500 to-orange-500'
-    },
-    {
       icon: Code2,
-      title: '50+ GitHub Repos',
+      title: '10+ GitHub Repos',
       description: 'Active open-source contributor',
       color: 'from-purple-500 to-pink-500'
     },
@@ -91,7 +70,14 @@ const About = () => {
       title: 'Fast Learner',
       description: 'Mastered 3 frameworks in 6 months',
       color: 'from-green-500 to-emerald-500'
-    }
+    },
+    {
+      icon: Zap,
+      title: 'Performance Expert',
+      description: 'Optimized apps for 40% faster load times',
+      color: 'from-yellow-500 to-orange-500'
+    },
+   
   ];
 
   const interests = [
@@ -104,9 +90,8 @@ const About = () => {
   ];
 
   const stats = [
-    { label: 'Projects Completed', value: '15+', icon: Rocket },
-    { label: 'Lines of Code', value: '50K+', icon: Code2 },
-    { label: 'Happy Clients', value: '10+', icon: Heart },
+    { label: 'Projects Completed', value: '5+', icon: Rocket },
+    { label: 'Lines of Code', value: '5K+', icon: Code2 },
     { label: 'Coffee Consumed', value: '999+', icon: Coffee }
   ];
 
@@ -175,7 +160,7 @@ const About = () => {
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12">
             {stats.map((stat, index) => {
               const Icon = stat.icon;
               return (
@@ -222,10 +207,10 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Journey Tab */}
           {activeTab === 'journey' && (
-            <div className="grid lg:grid-cols-3 gap-8 animate-fade-in">
-              {/* Left Column */}
-              <div className="lg:col-span-2 space-y-8">
-                {/* My Journey Card */}
+            <div className="animate-fade-in space-y-8">
+              {/* Balanced Two Column Layout */}
+              <div className="grid lg:grid-cols-2 gap-8">
+                {/* Left Column - My Journey */}
                 <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
@@ -267,7 +252,7 @@ const About = () => {
                   </div>
                 </div>
 
-                {/* Education Card */}
+                {/* Right Column - Education */}
                 <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
@@ -328,73 +313,16 @@ const About = () => {
                     </div>
                   </div>
                 </div>
-
-                {/* Values Section */}
-                <div className="grid md:grid-cols-3 gap-6">
-                  {values.map((value, index) => {
-                    const Icon = value.icon;
-                    return (
-                      <div
-                        key={index}
-                        className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
-                      >
-                        <div className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
-                        <div className="relative">
-                          <div className={`w-12 h-12 bg-gradient-to-br ${value.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                            <Icon className="w-6 h-6 text-white" />
-                          </div>
-                          <h3 className="text-lg font-semibold text-white mb-2">{value.title}</h3>
-                          <p className="text-gray-400 text-sm leading-relaxed">{value.description}</p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
               </div>
 
-              {/* Right Column */}
-              <div className="space-y-8">
-                {/* Experience Card */}
-                <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300 lg:sticky lg:top-24">
+              {/* Second Row - Balanced Layout */}
+              <div className="grid lg:grid-cols-2 gap-8">
+                {/* Left Column - Availability */}
+                <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
                   <div className="relative">
-                    <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                      <div className="p-2 bg-purple-500/20 rounded-lg">
-                        <Briefcase className="w-5 h-5 text-purple-400" />
-                      </div>
-                      Experience
-                    </h2>
-                    
-                    <div className="space-y-6">
-                      {experiences.map((exp, index) => (
-                        <div key={index} className="pb-6 border-b border-white/10 last:border-0">
-                          <h3 className="text-lg font-semibold text-white">{exp.role}</h3>
-                          <p className="text-purple-400 font-medium flex items-center gap-2 mt-1">
-                            <Building2 className="w-4 h-4" />
-                            {exp.company}
-                          </p>
-                          <p className="text-sm text-gray-400 flex items-center gap-2 mt-2">
-                            <Clock className="w-4 h-4" />
-                            {exp.duration}
-                          </p>
-                          <p className="text-gray-300 mt-3 leading-relaxed">{exp.description}</p>
-
-                          {/* Achievements */}
-                          <ul className="mt-4 space-y-2">
-                            {exp.achievements.map((achievement, idx) => (
-                              <li key={idx} className="flex items-start gap-2 text-sm text-gray-400">
-                                <CheckCircle2 className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
-                                <span>{achievement}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Availability Section */}
-                    <div className="mt-8 p-6 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-xl border border-green-500/30">
+                    <div className="p-6 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-xl border border-green-500/30">
                       <div className="flex items-center gap-2 mb-3">
                         <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
                         <h3 className="text-lg font-semibold text-white">Available for Work</h3>
@@ -426,7 +354,7 @@ const About = () => {
                   </div>
                 </div>
 
-                {/* Interests Card */}
+                {/* Right Column - Interests */}
                 <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
@@ -453,6 +381,30 @@ const About = () => {
                       })}
                     </div>
                   </div>
+                </div>
+              </div>
+
+              {/* Values Section - Centered Below */}
+              <div className="max-w-5xl mx-auto">
+                <div className="grid md:grid-cols-3 gap-6">
+                  {values.map((value, index) => {
+                    const Icon = value.icon;
+                    return (
+                      <div
+                        key={index}
+                        className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
+                      >
+                        <div className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
+                        <div className="relative">
+                          <div className={`w-12 h-12 bg-gradient-to-br ${value.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                            <Icon className="w-6 h-6 text-white" />
+                          </div>
+                          <h3 className="text-lg font-semibold text-white mb-2">{value.title}</h3>
+                          <p className="text-gray-400 text-sm leading-relaxed">{value.description}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -492,7 +444,7 @@ const About = () => {
 
           {/* Achievements Tab */}
           {activeTab === 'achievements' && (
-            <div className="grid md:grid-cols-2 gap-8 animate-fade-in">
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 animate-fade-in">
               {achievements.map((achievement, index) => {
                 const Icon = achievement.icon;
                 return (
