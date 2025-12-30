@@ -18,7 +18,13 @@ import {
   Download,
   Mail,
   Zap,
-  Star
+  Star,
+  Trophy,
+  Layers,
+  Cpu,
+  Database,
+  Cloud,
+  Terminal
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -44,40 +50,39 @@ const About = () => {
   ];
 
   const skills = [
-    { name: 'React.js', level: 90, color: 'from-blue-500 to-cyan-500' },
-    { name: 'Spring Boot', level: 85, color: 'from-green-500 to-emerald-500' },
-    { name: 'JavaScript', level: 88, color: 'from-yellow-500 to-orange-500' },
-    { name: 'Java', level: 82, color: 'from-red-500 to-pink-500' },
-    { name: 'Tailwind CSS', level: 92, color: 'from-purple-500 to-pink-500' },
-    { name: 'Node.js', level: 70, color: 'from-green-600 to-lime-500' },
+    { name: 'React.js', level: 90, color: 'from-blue-500 to-cyan-500', icon: Layers },
+    { name: 'Spring Boot', level: 85, color: 'from-green-500 to-emerald-500', icon: Cpu },
+    { name: 'JavaScript', level: 88, color: 'from-yellow-500 to-orange-500', icon: Code2 },
+    { name: 'Java', level: 82, color: 'from-red-500 to-pink-500', icon: Terminal },
+    { name: 'Tailwind CSS', level: 92, color: 'from-purple-500 to-pink-500', icon: Layers },
+    { name: 'Node.js', level: 70, color: 'from-green-600 to-lime-500', icon: Database },
   ];
 
   const achievements = [
     {
       icon: Code2,
-      title: '10+ GitHub Repos',
-      description: 'Active open-source contributor',
+      title: '10+ GitHub Repositories',
+      description: 'Active open-source contributor building innovative projects',
       color: 'from-purple-500 to-pink-500'
     },
     {
       icon: Users,
-      title: 'Team Projects',
-      description: 'Led multiple collaborative projects',
+      title: 'Team Collaboration',
+      description: 'Led multiple collaborative projects with diverse teams',
       color: 'from-blue-500 to-cyan-500'
     },
     {
       icon: TrendingUp,
       title: 'Fast Learner',
-      description: 'Mastered 3 frameworks in 6 months',
+      description: 'Mastered 3 modern frameworks in just 6 months',
       color: 'from-green-500 to-emerald-500'
     },
     {
       icon: Zap,
-      title: 'Performance Expert',
-      description: 'Optimized apps for 40% faster load times',
+      title: 'Performance Optimization',
+      description: 'Optimized applications for 40% faster load times',
       color: 'from-yellow-500 to-orange-500'
-    },
-   
+    }
   ];
 
   const interests = [
@@ -90,9 +95,31 @@ const About = () => {
   ];
 
   const stats = [
-    { label: 'Projects Completed', value: '5+', icon: Rocket },
-    { label: 'Lines of Code', value: '5K+', icon: Code2 },
-    { label: 'Coffee Consumed', value: '999+', icon: Coffee }
+    { 
+      label: 'Projects Completed', 
+      value: '5+', 
+      icon: Rocket,
+      description: 'Full-stack applications',
+      color: 'from-purple-500 to-pink-500',
+      trend: '↑ 30% this year'
+    },
+    { 
+      label: 'Code Commits', 
+      value: '200+', 
+      icon: Code2,
+      description: 'Across all repositories',
+      color: 'from-blue-500 to-cyan-500',
+      trend: 'Active contributor'
+    },
+    { 
+      label: 'Technologies', 
+      value: '10+', 
+      icon: Layers,
+      description: 'Modern frameworks & tools',
+      color: 'from-green-500 to-emerald-500',
+      trend: 'Always learning'
+    },
+    
   ];
 
   const values = [
@@ -159,20 +186,47 @@ const About = () => {
             </div>
           </div>
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+          {/* Improved Stats Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-6">
             {stats.map((stat, index) => {
               const Icon = stat.icon;
               return (
                 <div
                   key={index}
-                  className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
+                  className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative text-center">
-                    <Icon className="w-8 h-8 text-purple-400 mx-auto mb-3" />
-                    <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
-                    <div className="text-sm text-gray-400">{stat.label}</div>
+                  {/* Animated gradient background */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                  
+                  {/* Glow effect */}
+                  <div className={`absolute -inset-1 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500`}></div>
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className={`p-3 bg-gradient-to-br ${stat.color} rounded-xl shadow-lg`}>
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+                      <span className="text-xs font-medium px-2 py-1 bg-white/10 rounded-full text-gray-300">
+                        {stat.trend}
+                      </span>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <div className="text-3xl font-bold text-white">{stat.value}</div>
+                      <div className="text-sm font-semibold text-gray-300">{stat.label}</div>
+                      <p className="text-xs text-gray-400 opacity-80">{stat.description}</p>
+                    </div>
+                    
+                    {/* Progress indicator (optional) */}
+                    <div className="mt-4 h-1 w-full bg-white/5 rounded-full overflow-hidden">
+                      <div 
+                        className={`h-full bg-gradient-to-r ${stat.color} rounded-full transition-all duration-1000`}
+                        style={{ 
+                          width: `${Math.min(100, 70 + index * 10)}%`,
+                          animationDelay: `${index * 0.2}s`
+                        }}
+                      ></div>
+                    </div>
                   </div>
                 </div>
               );
@@ -208,10 +262,10 @@ const About = () => {
           {/* Journey Tab */}
           {activeTab === 'journey' && (
             <div className="animate-fade-in space-y-8">
-              {/* Balanced Two Column Layout */}
+              {/* Balanced Two Column Layout - Now properly aligned */}
               <div className="grid lg:grid-cols-2 gap-8">
                 {/* Left Column - My Journey */}
-                <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
+                <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300 h-fit">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
                   <div className="relative">
@@ -252,12 +306,12 @@ const About = () => {
                   </div>
                 </div>
 
-                {/* Right Column - Education */}
-                <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
+                {/* Right Column - Education - Now properly aligned with Journey */}
+                <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300 h-fit">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
                   <div className="relative">
-                    <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
+                    <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
                       <div className="p-2 bg-purple-500/20 rounded-lg">
                         <GraduationCap className="w-6 h-6 text-purple-400" />
                       </div>
@@ -266,14 +320,10 @@ const About = () => {
                     
                     <div className="space-y-6">
                       {education.map((edu, index) => (
-                        <div key={index} className="relative pl-8 pb-8 last:pb-0">
-                          {/* Timeline line */}
-                          <div className="absolute left-0 top-2 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-pink-500"></div>
+                        <div key={index} className="relative">
+                          {/* Removed timeline line that was causing visual gap */}
                           
-                          {/* Timeline dot */}
-                          <div className="absolute left-0 top-2 w-4 h-4 -ml-[7px] bg-purple-500 rounded-full border-4 border-slate-900 shadow-lg shadow-purple-500/50"></div>
-                          
-                          <div className="space-y-3">
+                          <div className="space-y-4">
                             <div className="flex justify-between items-start flex-wrap gap-4">
                               <div className="flex-1">
                                 <h3 className="text-xl font-semibold text-white">{edu.degree}</h3>
@@ -288,7 +338,7 @@ const About = () => {
                               </span>
                             </div>
                             
-                            <p className="text-gray-300 text-lg">{edu.description}</p>
+                            <p className="text-gray-300 text-lg leading-relaxed">{edu.description}</p>
                             
                             {edu.gpa && (
                               <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/30 rounded-lg">
@@ -297,15 +347,18 @@ const About = () => {
                             )}
 
                             {/* Courses */}
-                            <div className="flex flex-wrap gap-2 mt-4">
-                              {edu.courses.map((course, idx) => (
-                                <span
-                                  key={idx}
-                                  className="px-3 py-1 text-xs bg-purple-500/10 text-purple-300 rounded-full border border-purple-500/30"
-                                >
-                                  {course}
-                                </span>
-                              ))}
+                            <div className="pt-2">
+                              <h4 className="text-sm font-medium text-gray-400 mb-3">Key Courses</h4>
+                              <div className="flex flex-wrap gap-2">
+                                {edu.courses.map((course, idx) => (
+                                  <span
+                                    key={idx}
+                                    className="px-3 py-1.5 text-sm bg-purple-500/10 text-purple-300 rounded-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300"
+                                  >
+                                    {course}
+                                  </span>
+                                ))}
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -421,20 +474,30 @@ const About = () => {
                     <h2 className="text-3xl font-bold text-white mb-8 text-center">Technical Skills</h2>
                     
                     <div className="space-y-6">
-                      {skills.map((skill, index) => (
-                        <div key={index} className="space-y-2">
-                          <div className="flex justify-between items-center">
-                            <span className="text-white font-medium">{skill.name}</span>
-                            <span className="text-gray-400">{skill.level}%</span>
+                      {skills.map((skill, index) => {
+                        const Icon = skill.icon;
+                        return (
+                          <div key={index} className="space-y-3">
+                            <div className="flex items-center gap-4">
+                              <div className={`p-3 bg-gradient-to-br ${skill.color} rounded-xl shadow-lg`}>
+                                <Icon className="w-5 h-5 text-white" />
+                              </div>
+                              <div className="flex-1">
+                                <div className="flex justify-between items-center">
+                                  <span className="text-white font-medium">{skill.name}</span>
+                                  <span className="text-gray-400 font-bold">{skill.level}%</span>
+                                </div>
+                                <div className="h-2.5 bg-white/10 rounded-full overflow-hidden mt-2">
+                                  <div
+                                    className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out`}
+                                    style={{ width: `${skill.level}%` }}
+                                  ></div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
-                          <div className="h-3 bg-white/10 rounded-full overflow-hidden">
-                            <div
-                              className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out`}
-                              style={{ width: `${skill.level}%` }}
-                            ></div>
-                          </div>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
@@ -444,26 +507,30 @@ const About = () => {
 
           {/* Achievements Tab */}
           {activeTab === 'achievements' && (
-            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 animate-fade-in">
-              {achievements.map((achievement, index) => {
-                const Icon = achievement.icon;
-                return (
-                  <div
-                    key={index}
-                    className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
-                  >
-                    <div className={`absolute inset-0 bg-gradient-to-br ${achievement.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
-                    
-                    <div className="relative">
-                      <div className={`w-16 h-16 bg-gradient-to-br ${achievement.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                        <Icon className="w-8 h-8 text-white" />
+            <div className="animate-fade-in">
+              <div className="max-w-5xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-8">
+                  {achievements.map((achievement, index) => {
+                    const Icon = achievement.icon;
+                    return (
+                      <div
+                        key={index}
+                        className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
+                      >
+                        <div className={`absolute inset-0 bg-gradient-to-br ${achievement.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
+                        
+                        <div className="relative">
+                          <div className={`w-16 h-16 bg-gradient-to-br ${achievement.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                            <Icon className="w-8 h-8 text-white" />
+                          </div>
+                          <h3 className="text-2xl font-bold text-white mb-3">{achievement.title}</h3>
+                          <p className="text-gray-400 text-base leading-relaxed">{achievement.description}</p>
+                        </div>
                       </div>
-                      <h3 className="text-2xl font-bold text-white mb-3">{achievement.title}</h3>
-                      <p className="text-gray-400 text-lg">{achievement.description}</p>
-                    </div>
-                  </div>
-                );
-              })}
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           )}
         </div>
