@@ -19,9 +19,7 @@ import {
   Users,
   Globe,
   Download,
-  Mail,
-  Phone,
-  MapPin
+  Mail
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -72,7 +70,7 @@ const About = () => {
   const achievements = [
     {
       icon: Award,
-      title: 'Dean\'s List',
+      title: 'Deans List',
       description: 'Academic excellence recognition',
       color: 'from-yellow-500 to-orange-500'
     },
@@ -109,7 +107,7 @@ const About = () => {
     { label: 'Projects Completed', value: '15+', icon: Rocket },
     { label: 'Lines of Code', value: '50K+', icon: Code2 },
     { label: 'Happy Clients', value: '10+', icon: Heart },
-    { label: 'Coffee Consumed', value: '∞', icon: Coffee }
+    { label: 'Coffee Consumed', value: '999+', icon: Coffee }
   ];
 
   const values = [
@@ -134,7 +132,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-full overflow-x-hidden">
       {/* Hero Section with Animated Background */}
       <section className="relative py-20 overflow-hidden">
         {/* Animated background particles */}
@@ -147,12 +145,12 @@ const About = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Content */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 backdrop-blur-sm rounded-full border border-purple-500/20 mb-6 animate-bounce">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 backdrop-blur-sm rounded-full border border-purple-500/20 mb-6">
               <Sparkles className="w-4 h-4 text-purple-400" />
               <span className="text-purple-300 text-sm font-medium">Get to know me better</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6">
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
                 About Me
               </span>
@@ -166,7 +164,7 @@ const About = () => {
             {/* Contact Buttons */}
             <div className="flex flex-wrap justify-center gap-4 mb-12">
               <button className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white rounded-xl font-semibold shadow-lg shadow-purple-500/50 transition-all duration-300 hover:scale-105 flex items-center gap-2">
-                <Download className="w-5 h-5 group-hover:animate-bounce" />
+                <Download className="w-5 h-5" />
                 Download CV
               </button>
               <button className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-xl font-semibold border border-white/20 transition-all duration-300 hover:scale-105 flex items-center gap-2">
@@ -178,19 +176,22 @@ const About = () => {
 
           {/* Stats Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative text-center">
-                  <stat.icon className="w-8 h-8 text-purple-400 mx-auto mb-3" />
-                  <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
-                  <div className="text-sm text-gray-400">{stat.label}</div>
+            {stats.map((stat, index) => {
+              const Icon = stat.icon;
+              return (
+                <div
+                  key={index}
+                  className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative text-center">
+                    <Icon className="w-8 h-8 text-purple-400 mx-auto mb-3" />
+                    <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
+                    <div className="text-sm text-gray-400">{stat.label}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -217,7 +218,7 @@ const About = () => {
       </section>
 
       {/* Main Content Based on Active Tab */}
-      <section className="relative py-12">
+      <section className="relative py-12 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Journey Tab */}
           {activeTab === 'journey' && (
@@ -238,7 +239,7 @@ const About = () => {
                     
                     <div className="space-y-4 text-gray-300 leading-relaxed text-lg">
                       <p>
-                        I'm a Computer Science student passionate about creating impactful web applications.
+                        I am a Computer Science student passionate about creating impactful web applications.
                         My journey began with simple HTML/CSS websites and evolved into full-stack development.
                       </p>
                       <p>
@@ -246,7 +247,7 @@ const About = () => {
                         My goal is to secure an internship where I can contribute meaningfully while expanding my skills.
                       </p>
                       <p>
-                        When I'm not coding, you can find me contributing to open-source projects,
+                        When I am not coding, you can find me contributing to open-source projects,
                         learning about cloud technologies, or exploring new frameworks.
                       </p>
                     </div>
@@ -258,7 +259,7 @@ const About = () => {
                           key={index}
                           className="flex items-center gap-2 px-4 py-3 bg-white/5 rounded-lg border border-white/10 hover:border-purple-500/30 transition-all duration-300 hover:scale-105"
                         >
-                          <CheckCircle2 className="w-5 h-5 text-green-400" />
+                          <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" />
                           <span className="text-sm text-gray-300 font-medium">{highlight}</span>
                         </div>
                       ))}
@@ -289,7 +290,7 @@ const About = () => {
                           
                           <div className="space-y-3">
                             <div className="flex justify-between items-start flex-wrap gap-4">
-                              <div>
+                              <div className="flex-1">
                                 <h3 className="text-xl font-semibold text-white">{edu.degree}</h3>
                                 <p className="text-purple-400 font-medium flex items-center gap-2 mt-1">
                                   <Building2 className="w-4 h-4" />
@@ -330,28 +331,31 @@ const About = () => {
 
                 {/* Values Section */}
                 <div className="grid md:grid-cols-3 gap-6">
-                  {values.map((value, index) => (
-                    <div
-                      key={index}
-                      className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
-                    >
-                      <div className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
-                      <div className="relative">
-                        <div className={`w-12 h-12 bg-gradient-to-br ${value.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                          <value.icon className="w-6 h-6 text-white" />
+                  {values.map((value, index) => {
+                    const Icon = value.icon;
+                    return (
+                      <div
+                        key={index}
+                        className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
+                      >
+                        <div className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
+                        <div className="relative">
+                          <div className={`w-12 h-12 bg-gradient-to-br ${value.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                            <Icon className="w-6 h-6 text-white" />
+                          </div>
+                          <h3 className="text-lg font-semibold text-white mb-2">{value.title}</h3>
+                          <p className="text-gray-400 text-sm leading-relaxed">{value.description}</p>
                         </div>
-                        <h3 className="text-lg font-semibold text-white mb-2">{value.title}</h3>
-                        <p className="text-gray-400 text-sm">{value.description}</p>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
 
               {/* Right Column */}
               <div className="space-y-8">
                 {/* Experience Card */}
-                <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300 sticky top-24">
+                <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300 lg:sticky lg:top-24">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
                   <div className="relative">
@@ -435,15 +439,18 @@ const About = () => {
                     </h2>
                     
                     <div className="grid grid-cols-2 gap-4">
-                      {interests.map((interest, index) => (
-                        <div
-                          key={index}
-                          className="flex flex-col items-center gap-2 p-4 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500/30 hover:scale-105 transition-all duration-300"
-                        >
-                          <interest.icon className={`w-8 h-8 ${interest.color}`} />
-                          <span className="text-sm text-gray-300 font-medium">{interest.name}</span>
-                        </div>
-                      ))}
+                      {interests.map((interest, index) => {
+                        const Icon = interest.icon;
+                        return (
+                          <div
+                            key={index}
+                            className="flex flex-col items-center gap-2 p-4 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500/30 hover:scale-105 transition-all duration-300"
+                          >
+                            <Icon className={`w-8 h-8 ${interest.color}`} />
+                            <span className="text-sm text-gray-300 font-medium">{interest.name}</span>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
@@ -486,22 +493,25 @@ const About = () => {
           {/* Achievements Tab */}
           {activeTab === 'achievements' && (
             <div className="grid md:grid-cols-2 gap-8 animate-fade-in">
-              {achievements.map((achievement, index) => (
-                <div
-                  key={index}
-                  className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
-                >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${achievement.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
-                  
-                  <div className="relative">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${achievement.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                      <achievement.icon className="w-8 h-8 text-white" />
+              {achievements.map((achievement, index) => {
+                const Icon = achievement.icon;
+                return (
+                  <div
+                    key={index}
+                    className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
+                  >
+                    <div className={`absolute inset-0 bg-gradient-to-br ${achievement.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
+                    
+                    <div className="relative">
+                      <div className={`w-16 h-16 bg-gradient-to-br ${achievement.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                        <Icon className="w-8 h-8 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-white mb-3">{achievement.title}</h3>
+                      <p className="text-gray-400 text-lg">{achievement.description}</p>
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-3">{achievement.title}</h3>
-                    <p className="text-gray-400 text-lg">{achievement.description}</p>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>
