@@ -1,19 +1,4 @@
-import { 
-  Code2, 
-  Database, 
-  Wrench, 
-  Sparkles,
-  TrendingUp,
-  CheckCircle2,
-  Zap,
-  Target,
-  Shield,
-  Smartphone,
-  BookOpen,
-  Rocket,
-  Layout,
-  Server,
-  GitBranch
+import { Code2, Database, Wrench, Sparkles, TrendingUp, CheckCircle2, Zap, Target, Shield, Smartphone, BookOpen, Rocket, Layout, Server, GitBranch
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -38,11 +23,13 @@ const Skills = () => {
       icon: Server,
       color: 'from-green-500 to-emerald-500',
       skills: [
-        { name: 'Node.js', level: 85 },
-        { name: 'Express.js', level: 82 },
-        { name: 'REST APIs', level: 88 },
-        { name: 'Authentication', level: 80 },
-        { name: 'Spring Boot', level: 85 },
+        { name: 'Spring Boot', level: 90 },
+        { name: 'Fast API', level: 80 },
+        { name: 'Node.js', level: 70 },
+        { name: 'Express.js', level: 62 },
+        { name: 'REST APIs', level: 90 },
+        
+        
       ],
     },
     {
@@ -50,11 +37,11 @@ const Skills = () => {
       icon: Database,
       color: 'from-purple-500 to-pink-500',
       skills: [
+        { name: 'PostgreSQL', level: 90 },
+        { name: 'MySQL', level: 85 },
         { name: 'MongoDB', level: 80 },
-        { name: 'PostgreSQL', level: 75 },
-        { name: 'MySQL', level: 70 },
-        { name: 'Redis', level: 65 },
-        { name: 'Database Design', level: 78 },
+        { name: 'Redis', level: 60 },
+        { name: 'Database Design', level: 88 },
       ],
     },
     {
