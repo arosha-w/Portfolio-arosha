@@ -1,30 +1,6 @@
 import { 
-  GraduationCap, 
-  Building2, 
-  Calendar, 
-  CheckCircle2, 
-  Sparkles,
-  Code2,
-  Rocket,
-  Target,
-  Heart,
-  Coffee,
-  Music,
-  Book,
-  Gamepad2,
-  TrendingUp,
-  Users,
-  Globe,
-  Download,
-  Mail,
-  Zap,
-  Star,
-  Trophy,
-  Layers,
-  Cpu,
-  Database,
-  Cloud,
-  Terminal
+  GraduationCap, Building2, Calendar, CheckCircle2, Sparkles, Code2, Rocket, Target, Heart, Coffee, Music,
+  Book, Gamepad2, TrendingUp, Users, Globe, Download, Mail, Zap, Star, Trophy, Layers, Cpu, Database, Cloud, Terminal
 } from 'lucide-react';
 import { useState } from 'react';
 
