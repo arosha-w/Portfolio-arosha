@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FiSend, FiUser, FiMail, FiMessageSquare } from 'react-icons/fi';
+import { Send, User, Mail, MessageSquare, CheckCircle2, AlertCircle } from 'lucide-react';
 import axios from 'axios';
 
 const ContactForm = () => {
@@ -48,12 +48,12 @@ const ContactForm = () => {
     <div className="max-w-2xl mx-auto">
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Name Input */}
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-            Name
+        <div className="group">
+          <label htmlFor="name" className="block text-sm font-semibold text-gray-300 mb-2">
+            Full Name
           </label>
           <div className="relative">
-            <FiUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <User className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5 group-hover:text-purple-400 transition-colors duration-300" />
             <input
               type="text"
               id="name"
@@ -61,19 +61,19 @@ const ContactForm = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-              placeholder="Your name"
+              className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300 hover:border-white/20"
+              placeholder="John Doe"
             />
           </div>
         </div>
 
         {/* Email Input */}
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-            Email
+        <div className="group">
+          <label htmlFor="email" className="block text-sm font-semibold text-gray-300 mb-2">
+            Email Address
           </label>
           <div className="relative">
-            <FiMail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5 group-hover:text-purple-400 transition-colors duration-300" />
             <input
               type="email"
               id="email"
@@ -81,19 +81,19 @@ const ContactForm = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-              placeholder="your.email@example.com"
+              className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300 hover:border-white/20"
+              placeholder="john@example.com"
             />
           </div>
         </div>
 
         {/* Message Input */}
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-            Message
+        <div className="group">
+          <label htmlFor="message" className="block text-sm font-semibold text-gray-300 mb-2">
+            Your Message
           </label>
           <div className="relative">
-            <FiMessageSquare className="absolute left-3 top-4 text-gray-400" />
+            <MessageSquare className="absolute left-4 top-4 text-gray-500 w-5 h-5 group-hover:text-purple-400 transition-colors duration-300" />
             <textarea
               id="message"
               name="message"
@@ -101,8 +101,8 @@ const ContactForm = () => {
               onChange={handleChange}
               required
               rows="6"
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 resize-none"
-              placeholder="Your message here..."
+              className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300 resize-none hover:border-white/20"
+              placeholder="Tell me about your project or inquiry..."
             />
           </div>
         </div>
@@ -111,16 +111,16 @@ const ContactForm = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full btn-primary flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="group w-full px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white rounded-xl font-semibold shadow-lg shadow-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/60 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
         >
           {isSubmitting ? (
             <>
-              <div className="w-5 h-5 border-t-2 border-white rounded-full animate-spin" />
+              <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
               <span>Sending...</span>
             </>
           ) : (
             <>
-              <FiSend />
+              <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               <span>Send Message</span>
             </>
           )}
@@ -129,16 +129,40 @@ const ContactForm = () => {
         {/* Status Message */}
         {submitStatus && (
           <div
-            className={`p-4 rounded-lg ${
+            className={`p-4 rounded-xl flex items-start gap-3 animate-fade-in ${
               submitStatus.type === 'success'
-                ? 'bg-green-50 text-green-800 border border-green-200'
-                : 'bg-red-50 text-red-800 border border-red-200'
+                ? 'bg-green-500/10 border border-green-500/30'
+                : 'bg-red-500/10 border border-red-500/30'
             }`}
           >
-            {submitStatus.message}
+            {submitStatus.type === 'success' ? (
+              <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+            ) : (
+              <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+            )}
+            <p className={submitStatus.type === 'success' ? 'text-green-400' : 'text-red-400'}>
+              {submitStatus.message}
+            </p>
           </div>
         )}
       </form>
+
+      <style>{`
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .animate-fade-in {
+          animation: fade-in 0.3s ease-out;
+        }
+      `}</style>
     </div>
   );
 };
