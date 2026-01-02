@@ -7,36 +7,36 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'john.doe@example.com',
-      link: 'mailto:john.doe@example.com',
+      value: 'aroshaudaraka99@gmail.com',
+      link: 'mailto:aroshaudaraka99@gmail.com',
       color: 'from-blue-500 to-cyan-500'
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+1 (123) 456-7890',
-      link: 'tel:+11234567890',
+      value: '0768649049 / 0711533724',
+      link: 'tel:0768649049/0711533724',
       color: 'from-green-500 to-emerald-500'
     },
     {
       icon: MapPin,
       title: 'Location',
-      value: 'New York, NY',
+      value: 'Badulla, Sri Lanka',
       link: null,
       color: 'from-purple-500 to-pink-500'
     },
     {
       icon: Linkedin,
       title: 'LinkedIn',
-      value: 'linkedin.com/in/johndoe',
-      link: 'https://linkedin.com/in/johndoe',
+      value: 'linkedin.com/in/aroshawijekoon',
+      link: 'https://linkedin.com/in/aroshawijekoon',
       color: 'from-orange-500 to-red-500'
     }
   ];
 
   const availability = [
     'Open to internship opportunities',
-    'Available for freelance projects',
+    'Available for projects',
     'Remote or on-site positions'
   ];
 
@@ -65,7 +65,7 @@ const Contact = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              I am currently seeking internship opportunities for Summer/Fall 2024.
+              I am currently seeking internship opportunities.
               Feel free to reach out for collaborations, opportunities, or just to connect!
             </p>
           </div>
