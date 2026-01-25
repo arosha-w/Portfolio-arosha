@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { ArrowRight, Github, Linkedin, Code, Rocket, Lightbulb, Mail } from 'lucide-react';
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     setIsVisible(true);
@@ -54,12 +56,12 @@ const Home = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4 mb-10">
-                <button className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white rounded-xl font-semibold shadow-lg shadow-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/60 flex items-center gap-2">
+                <button onClick={() => navigate("/projects")}  className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white rounded-xl font-semibold shadow-lg shadow-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/60 flex items-center gap-2">
                   <span>View Projects</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
                 
-                <button className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-xl font-semibold border border-white/20 transition-all duration-300 hover:scale-105 flex items-center gap-2">
+                <button onClick={() => navigate("/contact")}  className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-xl font-semibold border border-white/20 transition-all duration-300 hover:scale-105 flex items-center gap-2">
                   <Mail className="w-5 h-5" />
                   <span>Contact Me</span>
                 </button>
@@ -132,7 +134,7 @@ const Home = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { value: '5+', label: 'Projects Built', color: 'from-purple-500 to-pink-500' },
-              { value: '10+', label: 'Technologies', color: 'from-pink-500 to-red-500' },
+              { value: '20+', label: 'Technologies', color: 'from-pink-500 to-red-500' },
               { value: '100%', label: 'Responsive', color: 'from-blue-500 to-cyan-500' },
               { value: 'Open', label: 'To Opportunities', color: 'from-green-500 to-emerald-500' },
             ].map((stat, index) => (

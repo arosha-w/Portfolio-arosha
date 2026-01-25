@@ -1,144 +1,222 @@
-import ProjectCard from '../components/UI/ProjectCard';
-import { useState } from 'react';
+import { useEffect, useState } from "react";
+import {
+  Github,
+  ExternalLink,
+  Sparkles,
+  Code2,
+  Calendar,
+  Shield,
+  FileText,
+  ShoppingCart,
+  Layers,
+  Hospital, // ✅ added for Medicare
+} from "lucide-react";
 
 const Projects = () => {
   const projects = [
     {
-      name: 'E-Commerce Platform',
-      description: 'Full-featured online store with user authentication, product management, and payment integration.',
-      techStack: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Redux'],
-      githubLink: 'https://github.com/username/ecommerce',
-      demoLink: 'https://ecommerce-demo.com',
-      category: 'Full Stack',
-      date: 'Dec 2023'
-    },
-    {
-      name: 'Task Management App',
-      description: 'Collaborative task management application with real-time updates and team features.',
-      techStack: ['React', 'Express', 'Socket.io', 'PostgreSQL', 'Tailwind'],
-      githubLink: 'https://github.com/username/taskapp',
-      demoLink: 'https://taskapp-demo.com',
-      category: 'Full Stack',
-      date: 'Nov 2023'
-    },
-    {
-      name: 'Weather Dashboard',
-      description: 'Real-time weather application with location-based forecasts and interactive maps.',
-      techStack: ['React', 'Weather API', 'Chart.js', 'Geolocation API'],
-      githubLink: 'https://github.com/username/weather',
-      demoLink: 'https://weather-demo.com',
-      category: 'Frontend',
-      date: 'Oct 2023'
-    },
-    {
-      name: 'Blog API',
-      description: 'RESTful API for a blogging platform with user roles, comments, and file uploads.',
-      techStack: ['Node.js', 'Express', 'MongoDB', 'JWT', 'Multer'],
-      githubLink: 'https://github.com/username/blog-api',
+      name: "CrimeLink Analyzer",
+      description: "Centralized Digital Investigation Platform",
+      fullDescription:
+        "Developed a centralized digital investigation platform for law enforcement to analyze call records, visualize suspect communication networks, manage officer duties and weapons, and support field operations via a mobile application. The system enables data-driven investigations and improves operational efficiency through real-time analytics and role-based access control.",
+      techStack: [
+        "React",
+        "TypeScript",
+        "Spring Boot",
+        "PostgreSQL",
+        "FastAPI",
+        "React Native",
+        "Tailwind CSS",
+        "NativeWind",
+        "Docker",
+      ],
+      features: [
+        "Call data analysis and suspect network visualization",
+        "Role-based dashboards for administrators, investigators, and field officers",
+        "Mobile application support for field operations",
+        "Microservice-based architecture for scalability and maintainability",
+        "Secure authentication and protected data handling",
+      ],
+      githubLink: "https://github.com/arosha-w",
       demoLink: null,
-      category: 'Backend',
-      date: 'Sep 2023'
+      category: "Full Stack",
+      date: "Final Year Project",
+      icon: Shield,
+      color: "from-blue-500 to-cyan-500",
     },
+
     {
-      name: 'Portfolio Website',
-      description: 'Responsive portfolio website showcasing projects and skills with contact form.',
-      techStack: ['React', 'Tailwind CSS', 'EmailJS', 'React Router'],
-      githubLink: 'https://github.com/username/portfolio',
-      demoLink: 'https://portfolio-demo.com',
-      category: 'Frontend',
-      date: 'Aug 2023'
+      name: "Medicare",
+      description: "Web-based Healthcare Administration Platform",
+      fullDescription:
+        "Developed a web-based system to centralize patient records, appointment scheduling, prescription management, and billing operations for a healthcare clinic. Built as a team project with strong focus on data accuracy, security, and improving administrative efficiency through a smooth digital workflow.",
+      techStack: ["PHP", "Laravel", "Blade Templates", "MySQL", "Eloquent ORM"],
+      features: [
+        "Patient record management and appointment scheduling",
+        "Prescription and billing modules",
+        "Role-based authentication and authorization",
+        "Input validation and secure data handling",
+        "Responsive UI for administrative users",
+      ],
+      githubLink: "https://github.com/arosha-w",
+      demoLink: null,
+      category: "Full Stack",
+      date: "Academic Team Project",
+      icon: Hospital, // ✅ Hospital icon used here
+      color: "from-green-500 to-emerald-500",
     },
+
     {
-      name: 'Chat Application',
-      description: 'Real-time chat application with rooms, private messaging, and message history.',
-      techStack: ['React', 'Socket.io', 'Node.js', 'Redis', 'Bootstrap'],
-      githubLink: 'https://github.com/username/chat-app',
-      demoLink: 'https://chat-demo.com',
-      category: 'Full Stack',
-      date: 'Jul 2023'
-    }
+      name: "Point of Sale (POS) System",
+      description: "Desktop Retail Management Application",
+      fullDescription:
+        "Developed a secure, role-based Point of Sale (POS) desktop application to manage retail sales transactions and inventory operations. The system supports Admin and Cashier roles, enabling real-time stock updates, automated billing and invoice generation, and sales reporting with transaction history tracking.",
+      techStack: ["C#", "Windows Forms", "Microsoft SQL Server", "SSMS"],
+      features: [
+        "Secure login with Admin and Cashier roles",
+        "Product and category management",
+        "Real-time inventory tracking and stock updates",
+        "Automated billing and invoice generation",
+        "Sales reports and transaction history",
+      ],
+      githubLink: "https://github.com/arosha-w",
+      demoLink: null,
+      category: "Desktop",
+      date: "Academic Project",
+      icon: ShoppingCart,
+      color: "from-purple-500 to-pink-500",
+    },
   ];
 
-  const categories = ['All', 'Full Stack', 'Frontend', 'Backend'];
-  const [activeCategory, setActiveCategory] = useState('All');
+  const categories = ["All", "Full Stack", "Desktop"];
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [expandedProject, setExpandedProject] = useState(null);
 
-  const filteredProjects = activeCategory === 'All' 
-    ? projects 
-    : projects.filter(project => project.category === activeCategory);
+  useEffect(() => {
+    setExpandedProject(null);
+  }, [activeCategory]);
+
+  const filteredProjects =
+    activeCategory === "All"
+      ? projects
+      : projects.filter((project) => project.category === activeCategory);
 
   return (
-    <div className="animate-fade-in">
-      {/* Header */}
-      <section className="py-12 bg-gradient-to-r from-primary-50 to-white">
-        <div className="section-padding">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Projects</h1>
-          <p className="text-lg text-gray-600 max-w-3xl">
-            A collection of my work demonstrating practical application of skills.
-            Each project includes live demos and source code.
+    <div className="min-h-screen w-full overflow-x-hidden">
+      {/* Hero */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 blur-3xl opacity-20 animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-72 h-72 bg-pink-500 blur-3xl opacity-20 animate-pulse"></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 rounded-full border border-purple-500/20 mb-6">
+            <Sparkles className="w-4 h-4 text-purple-400" />
+            <span className="text-purple-300 text-sm font-medium">My Work Portfolio</span>
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+              Projects
+            </span>
+          </h1>
+
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+            A collection of projects showcasing real-world problem solving and technical expertise.
           </p>
         </div>
       </section>
 
       {/* Category Filter */}
-      <section className="py-8 bg-white border-b">
-        <div className="section-padding">
-          <div className="flex flex-wrap gap-4 justify-center">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
-                  activeCategory === category
-                    ? 'bg-primary-600 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Grid */}
-      <section className="py-16">
-        <div className="section-padding">
-          {filteredProjects.length === 0 ? (
-            <div className="text-center py-16">
-              <p className="text-gray-500 text-lg">No projects found in this category.</p>
-            </div>
-          ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProjects.map((project, index) => (
-                <ProjectCard key={index} project={project} />
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* GitHub Stats */}
-      <section className="py-16 bg-gray-50">
-        <div className="section-padding">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
-              More on GitHub
-            </h2>
-            <p className="text-gray-600 mb-8">
-              Check out my GitHub for more projects, contributions, and code samples.
-            </p>
-            <a
-              href="https://github.com/username"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 btn-primary"
+      <section className="py-8">
+        <div className="flex justify-center gap-4 flex-wrap">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-8 py-3 rounded-xl font-semibold transition-all ${
+                activeCategory === category
+                  ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white"
+                  : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white"
+              }`}
             >
-              <span>Visit GitHub Profile</span>
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-              </svg>
-            </a>
-          </div>
+              {category}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section className="py-16 pb-20">
+        <div className="max-w-5xl mx-auto px-4 space-y-8">
+          {filteredProjects.map((project, index) => {
+            const Icon = project.icon;
+            const isExpanded = expandedProject === index;
+
+            return (
+              <div
+                key={index}
+                className="bg-white/5 rounded-2xl border border-white/10 hover:border-purple-500/50 transition-all"
+              >
+                <div className="p-8">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className={`p-4 bg-gradient-to-br ${project.color} rounded-xl`}>
+                      <Icon className="w-8 h-8 text-white" />
+                    </div>
+
+                    <div>
+                      <h3 className="text-3xl font-bold text-white">{project.name}</h3>
+                      <p className="text-gray-300">{project.description}</p>
+                      <div className="flex items-center gap-2 text-sm text-gray-500 mt-2">
+                        <Calendar className="w-4 h-4" />
+                        {project.date}
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="text-gray-400">{project.fullDescription}</p>
+
+                  <button
+                    onClick={() => setExpandedProject(isExpanded ? null : index)}
+                    className="mt-6 px-5 py-3 bg-white/10 hover:bg-white/20 rounded-xl text-white text-sm font-semibold"
+                  >
+                    {isExpanded ? "Show Less" : "Learn More"}
+                  </button>
+
+                  {isExpanded && (
+                    <div className="mt-6 space-y-6">
+                      <div>
+                        <h4 className="text-sm font-semibold text-gray-300 mb-2">Tech Stack</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {project.techStack.map((tech, i) => (
+                            <span
+                              key={i}
+                              className="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-200"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div>
+                        <h4 className="text-sm font-semibold text-gray-300 mb-2">Key Features</h4>
+                        <ul className="space-y-2">
+                          {project.features.map((f, i) => (
+                            <li key={i} className="text-gray-400 flex gap-2">
+                              <span className="w-2 h-2 bg-purple-400 rounded-full mt-2"></span>
+                              {f}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
     </div>
