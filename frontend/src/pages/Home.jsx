@@ -12,7 +12,7 @@ const Home = () => {
 
   const skills = [
     'React', 'Spring Boot', 'Java', 'JavaScript', 
-    'Tailwind CSS', 'Node.js', 'MongoDB', 'MySQL'
+    'Tailwind CSS', 'Fast Api', 'PostgreSQL', 'MySQL'
   ];
 
   return (
