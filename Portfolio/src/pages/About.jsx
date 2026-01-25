@@ -144,7 +144,7 @@ const About = () => {
       icon: Users,
     },
     {
-      title: "Project Member",
+      title: "Member",
       organization: "Computer Science Students Community",
       icon: Code2,
     },
