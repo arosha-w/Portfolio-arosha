@@ -204,7 +204,7 @@ const About = () => {
 
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
               Computer Science Undergraduate Aspiring to Become a Full Stack Developer. Skilled in Frontend and Backend
-              Development with hands-on Academic and Project Experience.
+              Development With Hands-on Academic and Project Experience.
             </p>
 
             {/* Contact Buttons */}
