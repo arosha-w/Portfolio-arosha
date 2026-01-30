@@ -30,7 +30,7 @@ const About = () => {
       degree: "Bachelor of Computer Science",
       institution: "University of Ruhuna",
       duration: "2023 - 2026",
-      gpa: "3.58",
+      gpa: "3.60",
       description: "Focus on Software Engineering and Web Development",
       courses: ["Data Structures", "Algorithms", "Web Development", "Database Systems"],
       type: "Undergraduate",
@@ -90,7 +90,7 @@ const About = () => {
     {
       icon: Award,
       title: "Academic Excellence",
-      description: "Maintaining 3.58 GPA in Computer Science",
+      description: "Maintaining 3.60 GPA in Computer Science",
       color: "from-green-500 to-emerald-500",
     },
     {
@@ -129,7 +129,7 @@ const About = () => {
     },
     {
       label: "Current GPA",
-      value: "3.58",
+      value: "3.60",
       icon: Award,
       description: "Academic Excellence",
       color: "from-green-500 to-emerald-500",
