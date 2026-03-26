@@ -24,7 +24,7 @@ const Footer = () => {
 
             <div className="flex space-x-6">
               
-                <a href="https://github.com"
+                <a href="https://github.com/arosha-w"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-xl border border-white/10 hover:border-purple-500/50 text-gray-400 hover:text-purple-400 transition-all duration-300 hover:scale-110"
@@ -34,23 +34,13 @@ const Footer = () => {
               </a>
 
               
-              <a href="https://linkedin.com"
+              <a href="https://www.linkedin.com/in/arosha-wijekoon-206223312/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-xl border border-white/10 hover:border-blue-500/50 text-gray-400 hover:text-blue-400 transition-all duration-300 hover:scale-110"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-6 h-6" />
-              </a>
-
-              
-                <a href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-xl border border-white/10 hover:border-sky-500/50 text-gray-400 hover:text-sky-400 transition-all duration-300 hover:scale-110"
-                aria-label="Twitter"
-              >
-                <MessageCircle className="w-6 h-6" />
               </a>
             </div>
           </div>

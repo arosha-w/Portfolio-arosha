@@ -30,7 +30,7 @@ const Contact = () => {
       icon: Linkedin,
       title: "LinkedIn",
       value: "Arosha Wijekoon",
-      link: "https://linkedin.com/in/aroshawijekoon",
+      link: "https://www.linkedin.com/in/arosha-wijekoon-206223312/",
       color: "from-orange-500 to-red-500",
       external: true,
     },

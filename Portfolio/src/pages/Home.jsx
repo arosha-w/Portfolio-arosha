@@ -79,7 +79,7 @@ const Home = () => {
                 <a href="https://github.com/arosha-w" className="group p-3 sm:p-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl border border-white/20 transition-all duration-300 hover:scale-110">
                   <Github className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:text-purple-300 transition-colors" />
                 </a>
-                <a href="https://linkedin.com/in/aroshawijekoon" className="group p-3 sm:p-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl border border-white/20 transition-all duration-300 hover:scale-110">
+                <a href="https://www.linkedin.com/in/arosha-wijekoon-206223312/" className="group p-3 sm:p-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl border border-white/20 transition-all duration-300 hover:scale-110">
                   <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:text-purple-300 transition-colors" />
                 </a>
               </div>
