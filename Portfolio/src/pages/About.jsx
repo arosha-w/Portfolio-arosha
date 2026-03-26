@@ -68,7 +68,7 @@ const About = () => {
     title: "Trainee / Management Trainee",
     company: "People's Bank – Regional Office",
     duration: "2023",
-    description: "Assisted with regional-level administrative and banking support functions",
+    description: "Assisted with regional-level administrative and banking operations, coordinated communication between the regional office and branch officers, and supported management in organizing meetings and preparing presentations.",
     type: "Professional Experience",
   };
 
