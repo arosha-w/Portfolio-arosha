@@ -9,7 +9,8 @@ import {
   FileText,
   ShoppingCart,
   Layers,
-  Hospital, // ✅ added for Medicare
+  Hospital,
+  Scissors,
 } from "lucide-react";
 
 const Projects = () => {
@@ -41,8 +42,41 @@ const Projects = () => {
       demoLink: null,
       category: "Full Stack",
       date: "Final Year Project",
+      type: "Team Project",
       icon: Shield,
       color: "from-blue-500 to-cyan-500",
+    },
+
+    {
+      name: "Smart Appointment & Capacity Prediction System",
+      description: "AI-Powered Salon Scheduling & Resource Management Platform",
+      fullDescription:
+        "Developed a smart appointment booking and capacity prediction system for salons to optimize scheduling and resource management. The system leverages historical booking data to predict peak hours, manage real-time availability, and suggest optimal booking times — reducing overbooking, improving staff utilization, and enhancing overall client satisfaction.",
+      techStack: [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Spring Boot",
+        "PostgreSQL",
+        "JWT",
+        "REST API",
+      ],
+      features: [
+        "Predictive peak hour detection using historical booking data",
+        "Dynamic slot management with real-time availability checks",
+        "Overload detection and automatic alerts for scheduling conflicts",
+        "Smart rescheduling with alternative slot suggestions on cancellations",
+        "Role-based dashboards for Admin, Stylist, and Client",
+        "Admin analytics dashboard for booking trends and staff performance",
+        "Client portal for booking, rescheduling, and appointment history",
+      ],
+      githubLink: "https://github.com/arosha-w",
+      demoLink: null,
+      category: "Full Stack",
+      date: "Individual Project",
+      type: "Individual Project",
+      icon: Scissors,
+      color: "from-rose-500 to-orange-500",
     },
 
     {
@@ -62,7 +96,8 @@ const Projects = () => {
       demoLink: null,
       category: "Full Stack",
       date: "Academic Team Project",
-      icon: Hospital, // ✅ Hospital icon used here
+      type: "Team Project",
+      icon: Hospital,
       color: "from-green-500 to-emerald-500",
     },
 
@@ -83,6 +118,7 @@ const Projects = () => {
       demoLink: null,
       category: "Desktop",
       date: "Academic Project",
+      type: "Academic Project",
       icon: ShoppingCart,
       color: "from-purple-500 to-pink-500",
     },
@@ -165,8 +201,15 @@ const Projects = () => {
                       <Icon className="w-8 h-8 text-white" />
                     </div>
 
-                    <div>
-                      <h3 className="text-3xl font-bold text-white">{project.name}</h3>
+                    <div className="flex-1">
+                      <div className="flex flex-wrap items-center gap-3 mb-1">
+                        <h3 className="text-3xl font-bold text-white">{project.name}</h3>
+                        {project.type === "Individual Project" && (
+                          <span className="px-3 py-1 text-xs font-semibold bg-rose-500/20 border border-rose-500/40 text-rose-300 rounded-full">
+                            Individual Project
+                          </span>
+                        )}
+                      </div>
                       <p className="text-gray-300">{project.description}</p>
                       <div className="flex items-center gap-2 text-sm text-gray-500 mt-2">
                         <Calendar className="w-4 h-4" />
@@ -205,7 +248,7 @@ const Projects = () => {
                         <ul className="space-y-2">
                           {project.features.map((f, i) => (
                             <li key={i} className="text-gray-400 flex gap-2">
-                              <span className="w-2 h-2 bg-purple-400 rounded-full mt-2"></span>
+                              <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 shrink-0"></span>
                               {f}
                             </li>
                           ))}
