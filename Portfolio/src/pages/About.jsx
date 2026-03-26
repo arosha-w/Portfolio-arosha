@@ -171,210 +171,159 @@ const About = () => {
     },
   ];
 
+  const tabs = [
+    { id: "journey", label: "Journey" },
+    { id: "education", label: "Education" },
+    { id: "achievements", label: "Achievements" },
+  ];
+
   return (
     <div className="min-h-screen w-full overflow-x-hidden">
-      {/* Hero Section with Animated Background */}
-      <section className="relative py-20 overflow-hidden">
-        {/* Animated background particles */}
+      {/* Hero Section */}
+      <section className="relative py-16 sm:py-20 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-          <div
-            className="absolute bottom-20 right-10 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"
-            style={{ animationDelay: "1s" }}
-          ></div>
-          <div
-            className="absolute top-40 right-20 w-60 h-60 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"
-            style={{ animationDelay: "2s" }}
-          ></div>
+          <div className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-48 h-48 sm:w-72 sm:h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: "1s" }}></div>
+          <div className="absolute top-40 right-20 w-40 h-40 sm:w-60 sm:h-60 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: "2s" }}></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Content */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 backdrop-blur-sm rounded-full border border-purple-500/20 mb-6">
-              <Sparkles className="w-4 h-4 text-purple-400" />
-              <span className="text-purple-300 text-sm font-medium">Get to know me better</span>
+          <div className="text-center mb-10 sm:mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-purple-500/10 backdrop-blur-sm rounded-full border border-purple-500/20 mb-4 sm:mb-6">
+              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400" />
+              <span className="text-purple-300 text-xs sm:text-sm font-medium">About Me</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
                 About Me
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
-              Computer Science Undergraduate Aspiring to Become a Full Stack Developer. Skilled in Frontend and Backend
-              Development With Hands-on Academic and Project Experience.
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-2">
+              A passionate Computer Science undergraduate from Sri Lanka, building scalable full-stack applications
+              and continuously expanding my technical horizons.
             </p>
-
-            {/* Contact Buttons */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              <a
-                href="/Arosha-Wijekoon-CV.pdf"
-                download
-                className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white rounded-xl font-semibold shadow-lg shadow-purple-500/50 transition-all duration-300 hover:scale-105 flex items-center gap-2"
-              >
-                <Download className="w-5 h-5" />
-                Download CV
-              </a>
-            </div>
           </div>
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+          {/* Stats */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto mb-10 sm:mb-12">
             {stats.map((stat, index) => {
               const Icon = stat.icon;
               return (
                 <div
                   key={index}
-                  className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 overflow-hidden"
+                  className="group relative bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-5 sm:p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 text-center"
                 >
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
-                  ></div>
-                  <div
-                    className={`absolute -inset-1 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500`}
-                  ></div>
-
-                  <div className="relative z-10">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className={`p-3 bg-gradient-to-br ${stat.color} rounded-xl shadow-lg`}>
-                        <Icon className="w-6 h-6 text-white" />
-                      </div>
-                      <span className="text-xs font-medium px-2 py-1 bg-white/10 rounded-full text-gray-300">
-                        {stat.trend}
-                      </span>
-                    </div>
-
-                    <div className="space-y-2">
-                      <div className="text-3xl font-bold text-white">{stat.value}</div>
-                      <div className="text-sm font-semibold text-gray-300">{stat.label}</div>
-                      <p className="text-xs text-gray-400 opacity-80">{stat.description}</p>
-                    </div>
-
-                    <div className="mt-4 h-1 w-full bg-white/5 rounded-full overflow-hidden">
-                      <div
-                        className={`h-full bg-gradient-to-r ${stat.color} rounded-full transition-all duration-1000`}
-                        style={{ width: `${Math.min(100, 70 + index * 10)}%` }}
-                      ></div>
-                    </div>
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${stat.color} rounded-xl flex items-center justify-center mx-auto mb-3`}>
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
+                  <div className={`text-3xl sm:text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1`}>
+                    {stat.value}
+                  </div>
+                  <div className="text-white font-semibold text-sm mb-1">{stat.label}</div>
+                  <div className="text-gray-400 text-xs">{stat.description}</div>
+                  <div className="text-xs text-gray-500 mt-2">{stat.trend}</div>
                 </div>
               );
             })}
           </div>
-        </div>
-      </section>
 
-      {/* Tab Navigation */}
-      <section className="relative py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {["journey", "education", "achievements"].map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-8 py-3 rounded-xl font-semibold transition-all duration-300 ${
-                  activeTab === tab
-                    ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/50"
-                    : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white"
-                }`}
-              >
-                {tab.charAt(0).toUpperCase() + tab.slice(1)}
-              </button>
-            ))}
+          {/* Tab Navigation */}
+          <div className="flex justify-center mb-8 sm:mb-10">
+            <div className="flex gap-1 sm:gap-2 bg-white/5 p-1 sm:p-1.5 rounded-xl sm:rounded-2xl border border-white/10 overflow-x-auto">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-lg sm:rounded-xl font-semibold transition-all duration-300 whitespace-nowrap text-sm sm:text-base ${
+                    activeTab === tab.id
+                      ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg"
+                      : "text-gray-400 hover:text-white hover:bg-white/5"
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
 
-      {/* Main Content Based on Active Tab */}
-      <section className="relative py-12 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Journey Tab */}
           {activeTab === "journey" && (
-            <div className="animate-fade-in space-y-8">
-              <div className="grid lg:grid-cols-2 gap-8">
-                {/* My Journey */}
-                <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
+            <div className="animate-fade-in space-y-6 sm:space-y-8">
+              {/* Bio + Highlights */}
+              <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
+                {/* Bio */}
+                <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
                   <div className="relative">
-                    <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                      <div className="p-2 bg-purple-500/20 rounded-lg">
-                        <Sparkles className="w-6 h-6 text-purple-400" />
-                      </div>
-                      My Journey
-                    </h2>
+                    <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Who I Am</h2>
+                    <p className="text-gray-300 leading-relaxed text-sm sm:text-base mb-4">
+                      I'm Arosha Wijekoon, a Computer Science undergraduate at the University of Ruhuna with a 3.60 GPA.
+                      I specialize in building full-stack web applications using modern technologies like React, Spring Boot, and PostgreSQL.
+                    </p>
+                    <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
+                      I'm passionate about solving real-world problems through clean, scalable code and
+                      continuously exploring new technologies to stay current in the ever-evolving tech landscape.
+                    </p>
+                  </div>
+                </div>
 
-                    <div className="space-y-4 text-gray-300 leading-relaxed text-lg">
-                      <p>
-                        I am a Computer Science student passionate about creating impactful web applications. My journey
-                        began with foundational studies and evolved into full-stack development expertise.
-                      </p>
-                      <p>
-                        I enjoy solving real-world problems through code and continuously learning new technologies. My
-                        goal is to secure an internship where I can contribute meaningfully while expanding my skills.
-                      </p>
-                      <p>
-                        Eager to contribute to real-world projects, enhance problem-solving skills, and gain industry
-                        exposure through an internship or trainee position.
-                      </p>
-                    </div>
-
-                    {/* Highlights */}
-                    <div className="mt-6 grid grid-cols-2 gap-3">
-                      {highlights.map((highlight, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center gap-2 px-4 py-3 bg-white/5 rounded-lg border border-white/10 hover:border-purple-500/30 transition-all duration-300 hover:scale-105"
-                        >
-                          <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" />
-                          <span className="text-sm text-gray-300 font-medium">{highlight}</span>
+                {/* Highlights */}
+                <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
+                  <div className="relative">
+                    <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Key Strengths</h2>
+                    <div className="space-y-3">
+                      {highlights.map((item, i) => (
+                        <div key={i} className="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/10">
+                          <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 flex-shrink-0" />
+                          <span className="text-gray-300 text-sm sm:text-base">{item}</span>
                         </div>
                       ))}
                     </div>
                   </div>
                 </div>
+              </div>
 
-                {/* Professional Experience */}
-                <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
+              {/* Experience */}
+              <div className="max-w-5xl mx-auto">
+                <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
                   <div className="relative">
-                    <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                      <div className="p-2 bg-purple-500/20 rounded-lg">
-                        <Briefcase className="w-6 h-6 text-purple-400" />
+                    <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">Experience</h2>
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex-shrink-0">
+                        <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                       </div>
-                      Experience
-                    </h2>
-
-                    <div className="space-y-4">
-                      <h3 className="text-xl font-semibold text-white">{experience.title}</h3>
-                      <p className="text-purple-400 font-medium flex items-center gap-2">
-                        <Building2 className="w-4 h-4" />
-                        {experience.company}
-                      </p>
-                      <p className="text-sm text-gray-400 flex items-center gap-2">
-                        <Calendar className="w-4 h-4" />
-                        {experience.duration}
-                      </p>
-                      <p className="text-gray-300 leading-relaxed">{experience.description}</p>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
+                          <div>
+                            <h3 className="text-lg sm:text-xl font-bold text-white">{experience.title}</h3>
+                            <p className="text-purple-400 font-medium text-sm sm:text-base">{experience.company}</p>
+                          </div>
+                          <span className="flex items-center gap-1.5 text-gray-400 text-xs sm:text-sm px-3 py-1 bg-white/5 rounded-lg border border-white/10 flex-shrink-0">
+                            <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
+                            {experience.duration}
+                          </span>
+                        </div>
+                        <p className="text-gray-300 text-sm sm:text-base leading-relaxed">{experience.description}</p>
+                      </div>
                     </div>
 
                     {/* Extra Curricular */}
-                    <div className="mt-8 pt-6 border-t border-white/10">
-                      <h3 className="text-lg font-semibold text-white mb-4">Extra Curricular Activities</h3>
-                      <div className="space-y-4">
+                    <div className="mt-6 pt-6 border-t border-white/10">
+                      <h3 className="text-base sm:text-lg font-semibold text-white mb-4">Extra Curricular Activities</h3>
+                      <div className="space-y-3 sm:space-y-4">
                         {extraCurricular.map((activity, index) => {
                           const Icon = activity.icon;
                           return (
                             <div key={index} className="flex items-start gap-3">
-                              <div className="p-2 bg-purple-500/20 rounded-lg">
-                                <Icon className="w-4 h-4 text-purple-400" />
+                              <div className="p-2 bg-purple-500/20 rounded-lg flex-shrink-0">
+                                <Icon className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400" />
                               </div>
                               <div>
-                                <h4 className="text-white font-medium">{activity.title}</h4>
-                                <p className="text-sm text-gray-400">{activity.organization}</p>
+                                <h4 className="text-white font-medium text-sm sm:text-base">{activity.title}</h4>
+                                <p className="text-xs sm:text-sm text-gray-400">{activity.organization}</p>
                               </div>
                             </div>
                           );
@@ -385,29 +334,26 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Interests (Centered) */}
+              {/* Interests */}
               <div className="max-w-4xl mx-auto">
-                <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
+                <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
                   <div className="relative text-center">
-                    <h2 className="text-2xl font-bold text-white mb-6 inline-flex items-center gap-3 justify-center">
+                    <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 inline-flex items-center gap-3 justify-center">
                       <span className="p-2 bg-purple-500/20 rounded-lg">
-                        <Heart className="w-5 h-5 text-purple-400" />
+                        <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400" />
                       </span>
                       Interests
                     </h2>
-
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 justify-items-center">
+                    <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 sm:gap-4">
                       {interests.map((interest, index) => {
                         const Icon = interest.icon;
                         return (
                           <div
                             key={index}
-                            className="w-full max-w-[180px] flex flex-col items-center gap-2 p-4 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500/30 hover:scale-105 transition-all duration-300"
+                            className="flex flex-col items-center gap-2 p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500/30 hover:scale-105 transition-all duration-300"
                           >
-                            <Icon className={`w-8 h-8 ${interest.color}`} />
-                            <span className="text-sm text-gray-300 font-medium">{interest.name}</span>
+                            <Icon className={`w-6 h-6 sm:w-8 sm:h-8 ${interest.color}`} />
+                            <span className="text-xs sm:text-sm text-gray-300 font-medium">{interest.name}</span>
                           </div>
                         );
                       })}
@@ -418,25 +364,21 @@ const About = () => {
 
               {/* Values */}
               <div className="max-w-5xl mx-auto">
-                <div className="grid md:grid-cols-3 gap-6">
+                <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                   {values.map((value, index) => {
                     const Icon = value.icon;
                     return (
                       <div
                         key={index}
-                        className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
+                        className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-5 sm:p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
                       >
-                        <div
-                          className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}
-                        ></div>
+                        <div className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
                         <div className="relative">
-                          <div
-                            className={`w-12 h-12 bg-gradient-to-br ${value.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
-                          >
-                            <Icon className="w-6 h-6 text-white" />
+                          <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${value.color} rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                            <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                           </div>
-                          <h3 className="text-lg font-semibold text-white mb-2">{value.title}</h3>
-                          <p className="text-gray-400 text-sm leading-relaxed">{value.description}</p>
+                          <h3 className="text-base sm:text-lg font-semibold text-white mb-1 sm:mb-2">{value.title}</h3>
+                          <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">{value.description}</p>
                         </div>
                       </div>
                     );
@@ -449,50 +391,46 @@ const About = () => {
           {/* Education Tab */}
           {activeTab === "education" && (
             <div className="animate-fade-in max-w-5xl mx-auto">
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {education.map((edu, index) => (
                   <div
                     key={index}
-                    className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300"
+                    className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
                     <div className="relative">
-                      <div className="flex items-start justify-between flex-wrap gap-4 mb-4">
-                        <div className="flex items-center gap-4">
-                          <div className="p-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl">
-                            <GraduationCap className="w-6 h-6 text-white" />
+                      <div className="flex items-start justify-between flex-wrap gap-3 sm:gap-4 mb-4">
+                        <div className="flex items-start sm:items-center gap-3 sm:gap-4 flex-1 min-w-0">
+                          <div className="p-2 sm:p-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex-shrink-0">
+                            <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                           </div>
-                          <div>
-                            <h3 className="text-2xl font-bold text-white">{edu.degree}</h3>
-                            <p className="text-purple-400 font-medium flex items-center gap-2 mt-1">
-                              <Building2 className="w-4 h-4" />
+                          <div className="min-w-0">
+                            <h3 className="text-lg sm:text-2xl font-bold text-white leading-tight">{edu.degree}</h3>
+                            <p className="text-purple-400 font-medium flex items-center gap-1.5 mt-1 text-sm sm:text-base">
+                              <Building2 className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
                               {edu.institution}
                             </p>
                           </div>
                         </div>
-                        <div className="flex flex-col items-end gap-2">
-                          <span className="flex items-center gap-2 text-gray-400 px-3 py-1 bg-white/5 rounded-lg border border-white/10">
-                            <Calendar className="w-4 h-4" />
+                        <div className="flex flex-row sm:flex-col items-center sm:items-end gap-2 flex-shrink-0">
+                          <span className="flex items-center gap-1.5 text-gray-400 text-xs sm:text-sm px-2.5 sm:px-3 py-1 bg-white/5 rounded-lg border border-white/10">
+                            <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
                             {edu.duration}
                           </span>
                           {edu.gpa && (
-                            <div className="px-3 py-1 bg-green-500/10 border border-green-500/30 rounded-lg">
-                              <span className="text-sm text-green-400 font-medium">GPA: {edu.gpa}</span>
+                            <div className="px-2.5 sm:px-3 py-1 bg-green-500/10 border border-green-500/30 rounded-lg">
+                              <span className="text-xs sm:text-sm text-green-400 font-medium">GPA: {edu.gpa}</span>
                             </div>
                           )}
                         </div>
                       </div>
 
-                      <p className="text-gray-300 text-lg mb-4">{edu.description}</p>
+                      <p className="text-gray-300 text-sm sm:text-lg mb-3 sm:mb-4">{edu.description}</p>
 
                       {edu.courses.length > 0 && (
                         <div className="flex flex-wrap gap-2">
                           {edu.courses.map((course, idx) => (
-                            <span
-                              key={idx}
-                              className="px-3 py-1 text-sm bg-purple-500/10 text-purple-300 rounded-lg border border-purple-500/20"
-                            >
+                            <span key={idx} className="px-2.5 sm:px-3 py-1 text-xs sm:text-sm bg-purple-500/10 text-purple-300 rounded-lg border border-purple-500/20">
                               {course}
                             </span>
                           ))}
@@ -509,26 +447,21 @@ const About = () => {
           {activeTab === "achievements" && (
             <div className="animate-fade-in">
               <div className="max-w-5xl mx-auto">
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="grid sm:grid-cols-2 gap-5 sm:gap-8">
                   {achievements.map((achievement, index) => {
                     const Icon = achievement.icon;
                     return (
                       <div
                         key={index}
-                        className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
+                        className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
                       >
-                        <div
-                          className={`absolute inset-0 bg-gradient-to-br ${achievement.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}
-                        ></div>
-
+                        <div className={`absolute inset-0 bg-gradient-to-br ${achievement.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
                         <div className="relative">
-                          <div
-                            className={`w-16 h-16 bg-gradient-to-br ${achievement.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
-                          >
-                            <Icon className="w-8 h-8 text-white" />
+                          <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${achievement.color} rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                            <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                           </div>
-                          <h3 className="text-2xl font-bold text-white mb-3">{achievement.title}</h3>
-                          <p className="text-gray-400 text-base leading-relaxed">{achievement.description}</p>
+                          <h3 className="text-lg sm:text-2xl font-bold text-white mb-2 sm:mb-3">{achievement.title}</h3>
+                          <p className="text-gray-400 text-sm sm:text-base leading-relaxed">{achievement.description}</p>
                         </div>
                       </div>
                     );
