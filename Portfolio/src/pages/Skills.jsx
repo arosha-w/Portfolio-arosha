@@ -24,11 +24,10 @@ const Skills = () => {
         { name: "Java", level: 90 },
         { name: "JavaScript", level: 88 },
         { name: "TypeScript", level: 85 },
-         { name: "C", level: 80 },
+        { name: "C", level: 80 },
         { name: "Python", level: 75 },
         { name: "PHP", level: 70 },
         { name: "C#", level: 70 },
-       
       ],
     },
     {
@@ -123,62 +122,55 @@ const Skills = () => {
   return (
     <div className="min-h-screen w-full overflow-x-hidden">
       {/* Hero */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-16 sm:py-20 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 blur-3xl opacity-20 rounded-full animate-pulse" />
-          <div className="absolute bottom-20 right-10 w-72 h-72 bg-pink-500 blur-3xl opacity-20 rounded-full animate-pulse" />
+          <div className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 bg-purple-500 blur-3xl opacity-20 rounded-full animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-48 h-48 sm:w-72 sm:h-72 bg-pink-500 blur-3xl opacity-20 rounded-full animate-pulse" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 rounded-full border border-purple-500/20 mb-6">
-            <Sparkles className="w-4 h-4 text-purple-400" />
-            <span className="text-purple-300 text-sm font-medium">
-              My Technical Skillset
-            </span>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-purple-500/10 rounded-full border border-purple-500/20 mb-4 sm:mb-6">
+            <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400" />
+            <span className="text-purple-300 text-xs sm:text-sm font-medium">My Technical Skillset</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">
             <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
               Skills & Technologies
             </span>
           </h1>
 
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-            A structured overview of technologies and tools I use to build
-            scalable, secure, and user-friendly applications.
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto px-2">
+            A structured overview of technologies and tools I use to build scalable, secure, and user-friendly applications.
           </p>
         </div>
       </section>
 
       {/* Skills Grid */}
-      <section className="relative py-16">
-        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="relative py-10 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
           {skillsData.map((category, index) => {
             const Icon = category.icon;
             return (
               <div
                 key={index}
-                className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300"
+                className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 sm:p-6 md:p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300"
               >
-                <div className="flex items-center gap-4 mb-6">
-                  <div
-                    className={`w-14 h-14 bg-gradient-to-br ${category.color} rounded-xl flex items-center justify-center`}
-                  >
-                    <Icon className="w-7 h-7 text-white" />
+                <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                  <div className={`w-11 h-11 sm:w-14 sm:h-14 bg-gradient-to-br ${category.color} rounded-xl flex items-center justify-center flex-shrink-0`}>
+                    <Icon className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white">
-                    {category.category}
-                  </h3>
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-white leading-tight">{category.category}</h3>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   {category.skills.map((skill, idx) => (
                     <div key={idx}>
-                      <div className="flex justify-between text-sm mb-1">
+                      <div className="flex justify-between text-xs sm:text-sm mb-1">
                         <span className="text-white">{skill.name}</span>
                         <span className="text-gray-400">{skill.level}%</span>
                       </div>
-                      <div className="h-2 bg-white/10 rounded-full">
+                      <div className="h-1.5 sm:h-2 bg-white/10 rounded-full">
                         <div
                           className={`h-full bg-gradient-to-r ${category.color} rounded-full`}
                           style={{ width: `${skill.level}%` }}
@@ -193,23 +185,21 @@ const Skills = () => {
         </div>
       </section>
 
-      {/* Learning */}
-      <section className="relative py-16">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-8">
-            Currently Learning
-          </h2>
+      {/* Currently Learning */}
+      <section className="relative py-10 sm:py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 sm:mb-8">Currently Learning</h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {learning.map((item, index) => {
               const Icon = item.icon;
               return (
                 <div
                   key={index}
-                  className="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-purple-500/50 transition"
+                  className="bg-white/5 rounded-xl p-4 sm:p-6 border border-white/10 hover:border-purple-500/50 transition"
                 >
-                  <Icon className={`w-10 h-10 mx-auto mb-3 ${item.color}`} />
-                  <h3 className="text-white font-semibold">{item.name}</h3>
+                  <Icon className={`w-8 h-8 sm:w-10 sm:h-10 mx-auto mb-2 sm:mb-3 ${item.color}`} />
+                  <h3 className="text-white font-semibold text-sm sm:text-base">{item.name}</h3>
                   <span className="text-xs text-gray-400">{item.status}</span>
                 </div>
               );
@@ -219,27 +209,26 @@ const Skills = () => {
       </section>
 
       {/* Development Approach */}
-      <section className="relative py-16">
-        <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-3 gap-8">
-          {methodology.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={index}
-                className="bg-white/5 rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition text-center"
-              >
+      <section className="relative py-10 sm:py-16 pb-16 sm:pb-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-6 sm:mb-8">Development Approach</h2>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-8">
+            {methodology.map((item, index) => {
+              const Icon = item.icon;
+              return (
                 <div
-                  className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center mx-auto mb-6`}
+                  key={index}
+                  className="bg-white/5 rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-purple-500/50 transition text-center"
                 >
-                  <Icon className="w-8 h-8 text-white" />
+                  <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center mx-auto mb-4 sm:mb-6`}>
+                    <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-gray-400 text-sm sm:text-base">{item.description}</p>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-gray-400">{item.description}</p>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </section>
     </div>
