@@ -45,7 +45,6 @@ const Contact = () => {
   ];
 
   const availability = [
-    "Open to internship opportunities",
     "Available for projects",
     "Remote or on-site positions",
     "Usually replies within 24 hours",
@@ -74,9 +73,7 @@ const Contact = () => {
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-2">
-              I'm currently seeking internship opportunities. Feel free to contact me via email, phone, or social profiles.
-            </p>
+            
           </div>
         </div>
       </section>
@@ -156,10 +153,6 @@ const Contact = () => {
                   ))}
                 </ul>
 
-                <div className="pt-4 sm:pt-6 text-xs sm:text-sm text-gray-400 leading-relaxed">
-                  If you're contacting for an <span className="text-gray-200 font-medium">internship</span> or{" "}
-                  <span className="text-gray-200 font-medium">project</span>, email is best.
-                </div>
               </div>
             </div>
           </div>
