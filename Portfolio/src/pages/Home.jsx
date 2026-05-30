@@ -47,7 +47,7 @@ const Home = () => {
               </h1>
 
               <h2 className="text-xl sm:text-2xl md:text-3xl text-purple-200 mb-4 sm:mb-6 font-light">
-                Aspiring Full-Stack Developer
+                Full-Stack Developer
               </h2>
 
               <p className="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 leading-relaxed max-w-xl">

@@ -18,7 +18,7 @@ const Footer = () => {
                 Lets Connect!
               </h3>
               <p className="text-gray-400 mt-2">
-                Seeking opportunities in Full-Stack Development
+              
               </p>
             </div>
 
@@ -47,7 +47,7 @@ const Footer = () => {
 
           <div className="border-t border-white/10 mt-8 pt-8 text-center text-gray-400">
             <p>Copyright {currentYear} Portfolio. Built with React and Tailwind CSS.</p>
-            <p className="mt-2">Seeking opportunities in Full-Stack Development</p>
+            
           </div>
         </div>
       </div>
