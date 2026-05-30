@@ -33,8 +33,6 @@ const Home = () => {
             <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}>
               <div className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-full border border-purple-500/30 mb-4 sm:mb-6">
                 <span className="text-purple-300 text-xs sm:text-sm font-medium flex items-center gap-2">
-                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                  Available for opportunities
                 </span>
               </div>
 
@@ -132,7 +130,6 @@ const Home = () => {
               { value: '5+', label: 'Projects Built', color: 'from-purple-500 to-pink-500' },
               { value: '20+', label: 'Technologies', color: 'from-pink-500 to-red-500' },
               { value: '100%', label: 'Responsive', color: 'from-blue-500 to-cyan-500' },
-              { value: 'Open', label: 'To Opportunities', color: 'from-green-500 to-emerald-500' },
             ].map((stat, index) => (
               <div
                 key={index}
