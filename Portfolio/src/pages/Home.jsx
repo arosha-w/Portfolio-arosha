@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ArrowRight, Github, Linkedin, Code, Rocket, Lightbulb, Mail } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Code, Rocket, Lightbulb, Mail, Briefcase, Bug, Users } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
@@ -11,8 +11,33 @@ const Home = () => {
   }, []);
 
   const skills = [
-    'React', 'Spring Boot', 'Java', 'JavaScript',
-    'Tailwind CSS', 'FastAPI', 'PostgreSQL', 'MySQL'
+    'Java', 'Spring Boot', 'Angular', 'React', 'TypeScript', 'REST APIs',
+    'SOAP', 'PostgreSQL', 'MySQL', 'Docker', 'Maven', 'Tailwind CSS',
+    'FastAPI', 'JUnit', 'Kibana', 'Grafana'
+  ];
+
+  const trainingHighlights = [
+    {
+      icon: Code,
+      color: "bg-purple-500/20",
+      iconColor: "text-purple-400",
+      title: "Enterprise Java",
+      text: "Built and enhanced features in a large Java codebase using Spring Boot, Maven and REST APIs.",
+    },
+    {
+      icon: Users,
+      color: "bg-pink-500/20",
+      iconColor: "text-pink-400",
+      title: "Scrum Delivery",
+      text: "Two-week sprints with Solution Design documents, code reviews and sprint demos.",
+    },
+    {
+      icon: Bug,
+      color: "bg-blue-500/20",
+      iconColor: "text-blue-400",
+      title: "Java 21 Migration",
+      text: "Resolved missing dependencies across REST modules using Kibana logs and Grafana.",
+    },
   ];
 
   return (
@@ -33,6 +58,8 @@ const Home = () => {
             <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}>
               <div className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-full border border-purple-500/30 mb-4 sm:mb-6">
                 <span className="text-purple-300 text-xs sm:text-sm font-medium flex items-center gap-2">
+                  <Briefcase className="w-3 h-3 sm:w-4 sm:h-4" />
+                  Training Software Engineer at CodeGen International
                 </span>
               </div>
 
@@ -49,8 +76,9 @@ const Home = () => {
               </h2>
 
               <p className="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 leading-relaxed max-w-xl">
-                Passionate Computer Science Undergraduate Crafting Modern Web Experiences.
-                Specialized in Building Scalable Applications with React, Spring Boot, and Cloud Technologies.
+                Computer Science undergraduate at the University of Ruhuna with hands-on enterprise experience
+                from industrial training at CodeGen International. I build reliable, scalable software with
+                Java, Spring Boot, Angular and React.
               </p>
 
               {/* CTA Buttons */}
@@ -74,10 +102,22 @@ const Home = () => {
 
               {/* Social Links */}
               <div className="flex gap-3 sm:gap-4">
-                <a href="https://github.com/arosha-w" className="group p-3 sm:p-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl border border-white/20 transition-all duration-300 hover:scale-110">
+                <a
+                  href="https://github.com/arosha-w"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="group p-3 sm:p-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl border border-white/20 transition-all duration-300 hover:scale-110"
+                >
                   <Github className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:text-purple-300 transition-colors" />
                 </a>
-                <a href="https://www.linkedin.com/in/arosha-wijekoon-206223312/" className="group p-3 sm:p-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl border border-white/20 transition-all duration-300 hover:scale-110">
+                <a
+                  href="https://www.linkedin.com/in/arosha-wijekoon-206223312/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="group p-3 sm:p-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl border border-white/20 transition-all duration-300 hover:scale-110"
+                >
                   <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:text-purple-300 transition-colors" />
                 </a>
               </div>
@@ -103,8 +143,8 @@ const Home = () => {
                     <div className="grid grid-cols-3 gap-4 sm:gap-6">
                       {[
                         { icon: Code, color: "bg-purple-500/20", iconColor: "text-purple-400", label: "Clean Code" },
-                        { icon: Rocket, color: "bg-pink-500/20", iconColor: "text-pink-400", label: "Fast Deploy" },
-                        { icon: Lightbulb, color: "bg-blue-500/20", iconColor: "text-blue-400", label: "Innovation" },
+                        { icon: Rocket, color: "bg-pink-500/20", iconColor: "text-pink-400", label: "Scrum Delivery" },
+                        { icon: Lightbulb, color: "bg-blue-500/20", iconColor: "text-blue-400", label: "Problem Solving" },
                       ].map(({ icon: Icon, color, iconColor, label }) => (
                         <div key={label} className="flex flex-col items-center">
                           <div className={`p-3 sm:p-4 ${color} rounded-xl mb-2 sm:mb-3`}>
@@ -127,9 +167,10 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
             {[
-              { value: '5+', label: 'Projects Built', color: 'from-purple-500 to-pink-500' },
-              { value: '20+', label: 'Technologies', color: 'from-pink-500 to-red-500' },
-              { value: '100%', label: 'Responsive', color: 'from-blue-500 to-cyan-500' },
+              { value: '10', label: 'Projects Built', color: 'from-purple-500 to-pink-500' },
+              { value: '6 mo', label: 'Industry Training', color: 'from-pink-500 to-red-500' },
+              { value: '3.64', label: 'GPA / 4.00', color: 'from-green-500 to-emerald-500' },
+              { value: '20+', label: 'Technologies', color: 'from-blue-500 to-cyan-500' },
             ].map((stat, index) => (
               <div
                 key={index}
@@ -144,6 +185,43 @@ const Home = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industrial Training Section */}
+      <section className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center mb-3 sm:mb-4">
+            Industrial <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Training</span>
+          </h3>
+          <p className="text-gray-400 text-center text-sm sm:text-base max-w-2xl mx-auto mb-8 sm:mb-12">
+            Training Software Engineer at CodeGen International, Colombo · Apr 2026 – Oct 2026
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
+            {trainingHighlights.map(({ icon: Icon, color, iconColor, title, text }) => (
+              <div
+                key={title}
+                className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 sm:p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300"
+              >
+                <div className={`inline-flex p-3 ${color} rounded-xl mb-3 sm:mb-4`}>
+                  <Icon className={`w-5 h-5 sm:w-6 sm:h-6 ${iconColor}`} />
+                </div>
+                <h4 className="text-lg sm:text-xl font-semibold text-white mb-2">{title}</h4>
+                <p className="text-gray-400 text-sm sm:text-base leading-relaxed">{text}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex justify-center mt-8">
+            <button
+              onClick={() => navigate("/about")}
+              className="group px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-xl font-semibold border border-white/20 transition-all duration-300 flex items-center gap-2 text-sm sm:text-base"
+            >
+              <span>Read my full experience</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
           </div>
         </div>
       </section>
