@@ -45,7 +45,7 @@ const Contact = () => {
   ];
 
   const availability = [
-    "Available for projects",
+    "Open to Software Engineer roles",
     "Remote or on-site positions",
     "Usually replies within 24 hours",
   ];
@@ -73,7 +73,9 @@ const Contact = () => {
               </span>
             </h1>
 
-            
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-2">
+              I'm looking for a Software Engineer role. Email is the quickest way to reach me.
+            </p>
           </div>
         </div>
       </section>
