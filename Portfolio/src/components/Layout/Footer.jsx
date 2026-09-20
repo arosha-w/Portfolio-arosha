@@ -18,7 +18,7 @@ const Footer = () => {
                 Let's Connect!
               </h3>
               <p className="text-gray-400 mt-2">
-                Software Engineer · Sri Lanka
+                Full-Stack Developer · Sri Lanka
               </p>
             </div>
 
@@ -68,4 +68,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Footer
