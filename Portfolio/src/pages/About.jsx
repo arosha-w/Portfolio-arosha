@@ -14,8 +14,6 @@ import {
   Gamepad2,
   Users,
   Globe,
-  Download,
-  Mail,
   Zap,
   Award,
   Briefcase,
@@ -30,19 +28,28 @@ const About = () => {
       degree: "Bachelor of Computer Science",
       institution: "University of Ruhuna",
       duration: "2023 - 2026",
-      gpa: "3.60",
+      gpa: "3.64 / 4.00",
       description: "Focus on Software Engineering and Web Development",
       courses: ["Data Structures", "Algorithms", "Web Development", "Database Systems"],
       type: "Undergraduate",
     },
     {
       degree: "GCE Advanced Level",
-      institution: "2021",
+      institution: "Department of Examinations, Sri Lanka",
       duration: "2021",
       gpa: null,
       description: "Combined Maths (B), Physics (B), Chemistry (B)",
       courses: [],
       type: "A/L",
+    },
+    {
+      degree: "Diploma in English",
+      institution: "Sabaragamuwa University of Sri Lanka",
+      duration: "2022 - 2023",
+      gpa: null,
+      description: "Advanced English language proficiency",
+      courses: [],
+      type: "Diploma",
     },
     {
       degree: "Diploma in Information Technology",
@@ -53,28 +60,93 @@ const About = () => {
       courses: [],
       type: "Diploma",
     },
+  ];
+
+  const experiences = [
     {
-      degree: "Diploma in English",
-      institution: "Sabaragamuwa University of Sri Lanka",
-      duration: "Completed",
-      gpa: null,
-      description: "Advanced English language proficiency",
-      courses: [],
-      type: "Diploma",
+      title: "Training Software Engineer",
+      company: "CodeGen International (Pvt) Ltd · Colombo, Sri Lanka",
+      duration: "Apr 2026 - Oct 2026",
+      description:
+        "Six-month industrial training at a Sri Lankan-founded global travel technology company, working in a Scrum team on an enterprise Java application.",
+      highlights: [
+        "Built and enhanced features in an enterprise Java application across backend logic, data handling, configuration-based behavior, filtering, sorting and backend-to-frontend data mapping.",
+        "Built a full-stack training application with Java, Spring Boot, Maven, Angular and REST APIs, including CRUD operations, frontend integration and unit tests.",
+        "Worked in two-week Scrum sprints: sprint planning, coding-intent sessions, dev testing, code reviews, sprint reviews and retrospectives.",
+        "Contributed to Java 21 migration and stabilization, rebuilding services and resolving missing dependencies across REST modules.",
+        "Investigated build and runtime issues using Maven output, Kibana logs and Grafana monitoring.",
+        "Worked with Docker-based backend environments, Git/GitLab and Jenkins CI/CD, and tested with JUnit, Mockito, Postman and SOAP UI.",
+      ],
+      tags: [
+        "Java",
+        "Spring Boot",
+        "Angular",
+        "Maven",
+        "REST",
+        "SOAP",
+        "Docker",
+        "Kibana",
+        "Grafana",
+        "JUnit",
+      ],
+      phases: [
+        {
+          label: "Onboarding and Sun Travel assessment",
+          period: "Apr - May 2026",
+          text: "ER diagram, user stories and test plan, then a Spring Boot and Angular app presented to a viva panel.",
+        },
+        {
+          label: "Client project team",
+          period: "May - Jul 2026",
+          text: "Solution Design documents, coding-intent sessions, dev testing, code reviews and sprint demos.",
+        },
+        {
+          label: "Java 21 migration sub-team",
+          period: "From Jul 2026",
+          text: "Rebuilt services on Java 21 and tracked down missing dependencies using logs and monitoring.",
+        },
+      ],
+      note: "Client and company details are confidential, so task descriptions are kept high level.",
+    },
+    {
+      title: "Trainee / Management Trainee",
+      company: "People's Bank – Regional Office",
+      duration: "Sep 2022 - Jan 2023",
+      description:
+        "Assisted with regional-level administrative and banking operations, coordinated communication between the regional office and branch officers, and supported management in organizing meetings and preparing presentations.",
+      highlights: [],
+      tags: [],
+      phases: [],
+      note: null,
     },
   ];
 
-  const experience = {
-    title: "Trainee / Management Trainee",
-    company: "People's Bank – Regional Office",
-    duration: "2023",
-    description: "Assisted with regional-level administrative and banking operations, coordinated communication between the regional office and branch officers, and supported management in organizing meetings and preparing presentations.",
-    type: "Professional Experience",
-  };
-
-  const highlights = ["Full-Stack Development", "Problem Solving", "Team Collaboration", "Quick Learner"];
+  const highlights = [
+    "Enterprise Java and Spring Boot",
+    "Full-Stack Development",
+    "Debugging and Log Analysis",
+    "Agile / Scrum Teamwork",
+  ];
 
   const achievements = [
+    {
+      icon: Briefcase,
+      title: "Industrial Training at CodeGen",
+      description: "Six months in a Scrum team at a global travel technology company, working on an enterprise Java codebase",
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
+      icon: Zap,
+      title: "Java 21 Migration",
+      description: "Helped stabilize REST modules after the Java 21 migration by resolving missing dependencies",
+      color: "from-yellow-500 to-orange-500",
+    },
+    {
+      icon: Award,
+      title: "Academic Excellence",
+      description: "Maintaining a 3.64 / 4.00 GPA in Computer Science",
+      color: "from-green-500 to-emerald-500",
+    },
     {
       icon: Code2,
       title: "10+ GitHub Repositories",
@@ -85,19 +157,13 @@ const About = () => {
       icon: Users,
       title: "Team Leadership",
       description: "Led collaborative projects and community initiatives",
-      color: "from-blue-500 to-cyan-500",
+      color: "from-pink-500 to-rose-500",
     },
     {
-      icon: Award,
-      title: "Academic Excellence",
-      description: "Maintaining 3.60 GPA in Computer Science",
-      color: "from-green-500 to-emerald-500",
-    },
-    {
-      icon: Zap,
-      title: "Microservices Expert",
-      description: "Built scalable systems with microservice architecture",
-      color: "from-yellow-500 to-orange-500",
+      icon: Rocket,
+      title: "Microservices Architecture",
+      description: "Built a scalable microservice-based system for a real crime division as a final year project",
+      color: "from-indigo-500 to-purple-500",
     },
   ];
 
@@ -113,25 +179,25 @@ const About = () => {
   const stats = [
     {
       label: "Projects Completed",
-      value: "5+",
+      value: "10",
       icon: Rocket,
-      description: "Full-stack applications",
+      description: "Web, mobile and desktop",
       color: "from-purple-500 to-pink-500",
       trend: "↗ Growing",
     },
     {
-      label: "Technologies Mastered",
-      value: "20+",
-      icon: Code2,
-      description: "Frontend & Backend",
+      label: "Industry Training",
+      value: "6 Months",
+      icon: Briefcase,
+      description: "CodeGen International",
       color: "from-blue-500 to-cyan-500",
-      trend: "Always learning",
+      trend: "Apr - Oct 2026",
     },
     {
       label: "Current GPA",
-      value: "3.60",
+      value: "3.64",
       icon: Award,
-      description: "Academic Excellence",
+      description: "Out of 4.00",
       color: "from-green-500 to-emerald-500",
       trend: "Consistent",
     },
@@ -140,7 +206,7 @@ const About = () => {
   const extraCurricular = [
     {
       title: "Committee Member",
-      organization: "Permission and Feedback Handling - Venture Talks",
+      organization: "Responsible for Managing Permissions and Feedback – Venture Talks Project",
       icon: Users,
     },
     {
@@ -202,8 +268,8 @@ const About = () => {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-2">
-              A passionate Computer Science undergraduate from Sri Lanka, building scalable full-stack applications
-              and continuously expanding my technical horizons.
+              A Computer Science undergraduate from Sri Lanka with hands-on enterprise software engineering
+              experience, building reliable, scalable applications with Java, Spring Boot, Angular and React.
             </p>
           </div>
 
@@ -260,12 +326,14 @@ const About = () => {
                   <div className="relative">
                     <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Who I Am</h2>
                     <p className="text-gray-300 leading-relaxed text-sm sm:text-base mb-4">
-                      I'm Arosha Wijekoon, a Computer Science undergraduate at the University of Ruhuna with a 3.60 GPA.
-                      I specialize in building full-stack web applications using modern technologies like React, Spring Boot, and PostgreSQL.
+                      I'm Arosha Wijekoon, a Computer Science undergraduate at the University of Ruhuna with a 3.64 GPA.
+                      I'm currently completing my industrial training as a Training Software Engineer at CodeGen International,
+                      where I work in a Scrum team on an enterprise Java application.
                     </p>
                     <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
-                      I'm passionate about solving real-world problems through clean, scalable code and
-                      continuously exploring new technologies to stay current in the ever-evolving tech landscape.
+                      I enjoy building reliable, scalable software with Java, Spring Boot, Angular and React, and I like
+                      tracing a problem from a symptom to its root cause using logs, monitoring and clean, tested code.
+                      I'm looking for a Software Engineer role where I can keep growing.
                     </p>
                   </div>
                 </div>
@@ -291,23 +359,63 @@ const About = () => {
                 <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
                   <div className="relative">
                     <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">Experience</h2>
-                    <div className="flex items-start gap-4">
-                      <div className="p-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex-shrink-0">
-                        <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
-                          <div>
-                            <h3 className="text-lg sm:text-xl font-bold text-white">{experience.title}</h3>
-                            <p className="text-purple-400 font-medium text-sm sm:text-base">{experience.company}</p>
+
+                    <div className="space-y-8">
+                      {experiences.map((exp, index) => (
+                        <div key={index} className="flex items-start gap-4">
+                          <div className="p-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex-shrink-0">
+                            <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                           </div>
-                          <span className="flex items-center gap-1.5 text-gray-400 text-xs sm:text-sm px-3 py-1 bg-white/5 rounded-lg border border-white/10 flex-shrink-0">
-                            <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
-                            {experience.duration}
-                          </span>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
+                              <div>
+                                <h3 className="text-lg sm:text-xl font-bold text-white">{exp.title}</h3>
+                                <p className="text-purple-400 font-medium text-sm sm:text-base">{exp.company}</p>
+                              </div>
+                              <span className="flex items-center gap-1.5 text-gray-400 text-xs sm:text-sm px-3 py-1 bg-white/5 rounded-lg border border-white/10 flex-shrink-0">
+                                <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
+                                {exp.duration}
+                              </span>
+                            </div>
+                            <p className="text-gray-300 text-sm sm:text-base leading-relaxed">{exp.description}</p>
+
+                            {exp.highlights.length > 0 && (
+                              <ul className="mt-4 space-y-2">
+                                {exp.highlights.map((h, i) => (
+                                  <li key={i} className="flex gap-2 text-gray-400 text-sm sm:text-base leading-relaxed">
+                                    <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></span>
+                                    {h}
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+
+                            {exp.phases.length > 0 && (
+                              <div className="mt-5 grid sm:grid-cols-3 gap-3">
+                                {exp.phases.map((phase, i) => (
+                                  <div key={i} className="p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10">
+                                    <div className="text-xs text-purple-300 mb-1">{phase.period}</div>
+                                    <div className="text-white font-semibold text-sm mb-1">{phase.label}</div>
+                                    <p className="text-gray-400 text-xs leading-relaxed">{phase.text}</p>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+
+                            {exp.tags.length > 0 && (
+                              <div className="mt-5 flex flex-wrap gap-2">
+                                {exp.tags.map((tag, i) => (
+                                  <span key={i} className="px-2.5 sm:px-3 py-1 text-xs sm:text-sm bg-purple-500/10 text-purple-300 rounded-lg border border-purple-500/20">
+                                    {tag}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+
+                            {exp.note && <p className="mt-4 text-xs text-gray-500">{exp.note}</p>}
+                          </div>
                         </div>
-                        <p className="text-gray-300 text-sm sm:text-base leading-relaxed">{experience.description}</p>
-                      </div>
+                      ))}
                     </div>
 
                     {/* Extra Curricular */}
