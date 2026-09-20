@@ -12,6 +12,9 @@ import {
   Server,
   Layers,
   Smartphone,
+  CheckCircle2,
+  Activity,
+  Users,
 } from "lucide-react";
 
 const Skills = () => {
@@ -36,10 +39,11 @@ const Skills = () => {
       color: "from-purple-500 to-pink-500",
       skills: [
         { name: "React.js", level: 90 },
+        { name: "Next.js", level: 80 },
+        { name: "Angular", level: 75 },
         { name: "HTML", level: 95 },
         { name: "CSS", level: 92 },
         { name: "Tailwind CSS", level: 90 },
-        { name: "Responsive Design", level: 85 },
       ],
     },
     {
@@ -59,10 +63,11 @@ const Skills = () => {
       color: "from-green-500 to-emerald-500",
       skills: [
         { name: "Spring Boot (Java)", level: 92 },
+        { name: "REST APIs", level: 90 },
+        { name: "SOAP Web Services", level: 70 },
         { name: "FastAPI (Python)", level: 80 },
         { name: "Laravel (PHP)", level: 70 },
         { name: ".NET", level: 75 },
-        { name: "REST APIs", level: 90 },
       ],
     },
     {
@@ -70,23 +75,57 @@ const Skills = () => {
       icon: Database,
       color: "from-orange-500 to-red-500",
       skills: [
-        { name: "PostgreSQL", level: 90 },
+        { name: "PostgreSQL (Neon)", level: 90 },
         { name: "MySQL", level: 88 },
         { name: "SQL Server (SSMS)", level: 80 },
-        { name: "MongoDB", level: 70 },
+        { name: "Oracle Database", level: 70 },
         { name: "Database Design", level: 87 },
       ],
     },
     {
-      category: "Tools & DevOps",
+      category: "DevOps & Tools",
       icon: Wrench,
       color: "from-pink-500 to-purple-500",
       skills: [
         { name: "Git", level: 90 },
         { name: "GitHub", level: 92 },
+        { name: "GitLab", level: 80 },
+        { name: "Maven", level: 80 },
         { name: "Docker", level: 75 },
+        { name: "CI/CD (Jenkins)", level: 70 },
         { name: "Linux", level: 80 },
-        { name: "VS Code", level: 95 },
+      ],
+    },
+    {
+      category: "Testing & API Tools",
+      icon: CheckCircle2,
+      color: "from-teal-500 to-green-500",
+      skills: [
+        { name: "JUnit", level: 80 },
+        { name: "Mockito", level: 75 },
+        { name: "Postman", level: 85 },
+        { name: "SOAP UI", level: 75 },
+      ],
+    },
+    {
+      category: "Monitoring & Debugging",
+      icon: Activity,
+      color: "from-yellow-500 to-orange-500",
+      skills: [
+        { name: "Kibana (Log Investigation)", level: 75 },
+        { name: "Grafana (Metrics & Dashboards)", level: 70 },
+        { name: "Root-Cause Debugging", level: 82 },
+      ],
+    },
+    {
+      category: "Enterprise Practices",
+      icon: Users,
+      color: "from-sky-500 to-indigo-500",
+      skills: [
+        { name: "Agile / Scrum", level: 85 },
+        { name: "Code Reviews", level: 85 },
+        { name: "Solution Design Documents", level: 80 },
+        { name: "Java 21 Migration", level: 70 },
       ],
     },
   ];
@@ -95,7 +134,7 @@ const Skills = () => {
     { name: "Kubernetes", status: "Learning", icon: Zap, color: "text-purple-400" },
     { name: "AWS Services", status: "Exploring", icon: Rocket, color: "text-blue-400" },
     { name: "GraphQL", status: "In Progress", icon: TrendingUp, color: "text-pink-400" },
-    { name: "Next.js", status: "Planned", icon: BookOpen, color: "text-green-400" },
+    { name: "Java 21", status: "Hands-on", icon: BookOpen, color: "text-green-400" },
   ];
 
   const methodology = [
