@@ -11,15 +11,16 @@ import {
   Layers,
   Hospital,
   Scissors,
+  Plane,
 } from "lucide-react";
 
 const Projects = () => {
   const projects = [
     {
       name: "CrimeLink Analyzer",
-      description: "Centralized Digital Investigation Platform",
+      description: "Crime Investigation Data Intelligence System",
       fullDescription:
-        "Developed a centralized digital investigation platform for law enforcement to analyze call records, visualize suspect communication networks, manage officer duties and weapons, and support field operations via a mobile application. The system enables data-driven investigations and improves operational efficiency through real-time analytics and role-based access control.",
+        "Developed as a final year project for the Matara Crime Division: a centralized digital investigation platform that helps law enforcement analyze call records, manage officer duties, and support field operations through a mobile application. The system enables data-driven investigations and improves operational efficiency through role-based access control and a microservices-based architecture.",
       techStack: [
         "React",
         "TypeScript",
@@ -32,16 +33,18 @@ const Projects = () => {
         "Docker",
       ],
       features: [
-        "Call data analysis and suspect network visualization",
+        "Call data analysis with location and time-based filtering",
+        "Vehicle plate registry accessible via mobile",
+        "Duty management system for tracking and managing officer duties",
+        "Duty recommendation using a weighted formula to rank officers",
+        "Leave management through a mobile application for leave requests and duty viewing",
         "Role-based dashboards for administrators, investigators, and field officers",
-        "Mobile application support for field operations",
-        "Microservice-based architecture for scalability and maintainability",
-        "Secure authentication and protected data handling",
+        "Microservices-based architecture for scalability and maintainability",
       ],
       githubLink: "https://github.com/arosha-w",
       demoLink: null,
       category: "Full Stack",
-      date: "Final Year Project",
+      date: "Final Year Project · Matara Crime Division",
       type: "Team Project",
       icon: Shield,
       color: "from-blue-500 to-cyan-500",
@@ -68,6 +71,7 @@ const Projects = () => {
         "Role-based dashboards for Admin, Stylist, and Client",
         "Admin analytics dashboard for booking trends and staff performance",
         "Client portal for booking, rescheduling, and appointment history",
+        "Planned enhancement: a mobile app for on-the-go booking and real-time notifications",
       ],
       githubLink: "https://github.com/arosha-w",
       demoLink: null,
@@ -76,6 +80,35 @@ const Projects = () => {
       type: "Individual Project",
       icon: Scissors,
       color: "from-rose-500 to-orange-500",
+    },
+    {
+      name: "Sun Travel",
+      description: "Full-Stack Training Assessment at CodeGen International",
+      fullDescription:
+        "Built during my industrial training at CodeGen International as the technical assessment. I started with the analysis and design, then implemented a Spring Boot backend and an Angular frontend, tested it, and presented it to a viva panel before updating it based on their feedback.",
+      techStack: [
+        "Java",
+        "Spring Boot",
+        "Maven",
+        "Angular",
+        "PostgreSQL (Neon)",
+        "REST APIs",
+        "JUnit",
+      ],
+      features: [
+        "ER diagram, user stories, test cases and a test plan written from the requirements",
+        "CRUD operations exposed as REST API endpoints with Spring Boot",
+        "Maven build and dependency management",
+        "Angular components, routing and forms, with API data mapped to frontend views",
+        "Unit testing and updates made from viva panel feedback",
+      ],
+      githubLink: null,
+      demoLink: null,
+      category: "Full Stack",
+      date: "Industrial Training · Apr - May 2026",
+      type: "Training Project",
+      icon: Plane,
+      color: "from-sky-500 to-indigo-500",
     },
     {
       name: "Medicare",
@@ -114,11 +147,11 @@ const Projects = () => {
       githubLink: "https://github.com/arosha-w",
       demoLink: null,
       category: "Desktop",
-      date: "Academic Project",
+      date: "Academic Group Project",
       type: "Academic Project",
       icon: ShoppingCart,
       color: "from-purple-500 to-pink-500",
-    },
+    }
   ];
 
   const categories = ["All", "Full Stack", "Desktop"];
