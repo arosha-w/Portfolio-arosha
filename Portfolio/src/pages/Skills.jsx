@@ -15,6 +15,8 @@ import {
   CheckCircle2,
   Activity,
   Users,
+  Brain,
+  Cpu,
 } from "lucide-react";
 
 const Skills = () => {
@@ -130,10 +132,47 @@ const Skills = () => {
     },
   ];
 
+  const aiml = [
+    {
+      title: "Foundations",
+      icon: Cpu,
+      color: "from-purple-500 to-pink-500",
+      items: [
+        "Python and FastAPI services",
+        "Prompt engineering for large language models",
+        "SQL and database design for data-driven apps",
+      ],
+    },
+    {
+      title: "Applied so far",
+      icon: TrendingUp,
+      color: "from-blue-500 to-cyan-500",
+      items: [
+        "Peak-hour and capacity prediction from historical booking data",
+        "Weighted-formula ranking for duty recommendations",
+        "Call data analysis with location and time-based filtering",
+      ],
+    },
+    {
+      title: "Learning next",
+      icon: BookOpen,
+      color: "from-green-500 to-emerald-500",
+      items: [
+        "Machine learning fundamentals",
+        "pandas and NumPy",
+        "scikit-learn",
+        "Neural network basics",
+        "Building LLM-powered applications",
+      ],
+    },
+  ];
+
   const learning = [
-    { name: "Kubernetes", status: "Learning", icon: Zap, color: "text-purple-400" },
-    { name: "AWS Services", status: "Exploring", icon: Rocket, color: "text-blue-400" },
-    { name: "GraphQL", status: "In Progress", icon: TrendingUp, color: "text-pink-400" },
+    { name: "Machine Learning", status: "Learning", icon: Brain, color: "text-purple-400" },
+    { name: "LLMs & Prompting", status: "Exploring", icon: Sparkles, color: "text-pink-400" },
+    { name: "Kubernetes", status: "Learning", icon: Zap, color: "text-blue-400" },
+    { name: "AWS Services", status: "Exploring", icon: Rocket, color: "text-cyan-400" },
+    { name: "GraphQL", status: "In Progress", icon: TrendingUp, color: "text-orange-400" },
     { name: "Java 21", status: "Hands-on", icon: BookOpen, color: "text-green-400" },
   ];
 
@@ -224,12 +263,51 @@ const Skills = () => {
         </div>
       </section>
 
+      {/* AI & Machine Learning */}
+      <section className="relative py-10 sm:py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-6 sm:mb-8">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">AI & Machine Learning</h2>
+            <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto">
+              My current focus. This shows what I already use and what I'm learning next, not a proficiency score.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5 sm:gap-8">
+            {aiml.map((group, index) => {
+              const Icon = group.icon;
+              return (
+                <div
+                  key={index}
+                  className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 sm:p-6 md:p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300"
+                >
+                  <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                    <div className={`w-11 h-11 sm:w-14 sm:h-14 bg-gradient-to-br ${group.color} rounded-xl flex items-center justify-center flex-shrink-0`}>
+                      <Icon className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-bold text-white">{group.title}</h3>
+                  </div>
+                  <ul className="space-y-2 sm:space-y-3">
+                    {group.items.map((item, i) => (
+                      <li key={i} className="flex gap-2 text-gray-300 text-sm sm:text-base leading-relaxed">
+                        <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Currently Learning */}
       <section className="relative py-10 sm:py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 sm:mb-8">Currently Learning</h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {learning.map((item, index) => {
               const Icon = item.icon;
               return (
