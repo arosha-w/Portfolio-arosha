@@ -53,7 +53,7 @@ const Projects = () => {
       name: "Smart Appointment & Capacity Prediction System",
       description: "AI-Powered Salon Scheduling & Resource Management Platform",
       fullDescription:
-        "Developed a smart appointment booking and capacity prediction system for salons to optimize scheduling and resource management. The system leverages historical booking data to predict peak hours, manage real-time availability, and suggest optimal booking times — reducing overbooking, improving staff utilization, and enhancing overall client satisfaction.",
+        "Developed a smart appointment booking and capacity prediction system for salons to optimize scheduling and resource management. The system leverages historical booking data to predict peak hours, manage real-time availability, and suggest optimal booking times - reducing overbooking, improving staff utilization, and enhancing overall client satisfaction.",
       techStack: [
         "Next.js",
         "React",
@@ -79,6 +79,7 @@ const Projects = () => {
       date: "Individual Project",
       type: "Individual Project",
       icon: Scissors,
+      highlight: "AI / ML",
       color: "from-rose-500 to-orange-500",
     },
     {
@@ -151,7 +152,7 @@ const Projects = () => {
       type: "Academic Project",
       icon: ShoppingCart,
       color: "from-purple-500 to-pink-500",
-    }
+    },
   ];
 
   const categories = ["All", "Full Stack", "Desktop"];
@@ -234,6 +235,11 @@ const Projects = () => {
                     <div className="flex-1 min-w-0">
                       <div className="flex flex-wrap items-start sm:items-center gap-2 sm:gap-3 mb-1">
                         <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">{project.name}</h3>
+                        {project.highlight && (
+                          <span className="px-2.5 sm:px-3 py-0.5 sm:py-1 text-xs font-semibold bg-purple-500/20 border border-purple-500/40 text-purple-300 rounded-full flex-shrink-0">
+                            {project.highlight}
+                          </span>
+                        )}
                         {project.type === "Individual Project" && (
                           <span className="px-2.5 sm:px-3 py-0.5 sm:py-1 text-xs font-semibold bg-rose-500/20 border border-rose-500/40 text-rose-300 rounded-full flex-shrink-0">
                             Individual Project
