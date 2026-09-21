@@ -17,6 +17,7 @@ import {
   Zap,
   Award,
   Briefcase,
+  Brain,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -126,6 +127,7 @@ const About = () => {
     "Full-Stack Development",
     "Debugging and Log Analysis",
     "Agile / Scrum Teamwork",
+    "Growing AI / ML Interest",
   ];
 
   const achievements = [
@@ -179,7 +181,7 @@ const About = () => {
   const stats = [
     {
       label: "Projects Completed",
-      value: "10",
+      value: "5",
       icon: Rocket,
       description: "Web, mobile and desktop",
       color: "from-purple-500 to-pink-500",
@@ -333,7 +335,7 @@ const About = () => {
                     <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
                       I enjoy building reliable, scalable software with Java, Spring Boot, Angular and React, and I like
                       tracing a problem from a symptom to its root cause using logs, monitoring and clean, tested code.
-                      I'm looking for a Software Engineer role where I can keep growing.
+                      I'm also growing my interest in AI and machine learning, and I'm looking for a Software Engineer role where I can keep learning.
                     </p>
                   </div>
                 </div>
@@ -436,6 +438,37 @@ const About = () => {
                             </div>
                           );
                         })}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* AI / ML Direction */}
+              <div className="max-w-5xl mx-auto">
+                <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative flex items-start gap-4">
+                    <div className="p-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex-shrink-0">
+                      <Brain className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h2 className="text-xl sm:text-2xl font-bold text-white mb-3">Where I'm Heading</h2>
+                      <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-3">
+                        I'm increasingly drawn to AI and machine learning. My CodeGen training began with prompt
+                        engineering for large language models, and my salon booking system predicts peak-hour
+                        capacity from historical booking data.
+                      </p>
+                      <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-4">
+                        I'm building on that with Python and machine learning fundamentals, and I want to bring
+                        those skills into real software products alongside my full-stack and enterprise Java experience.
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {["Machine Learning", "Python", "LLMs", "Prompt Engineering", "Predictive Analytics"].map((tag) => (
+                          <span key={tag} className="px-2.5 sm:px-3 py-1 text-xs sm:text-sm bg-purple-500/10 text-purple-300 rounded-lg border border-purple-500/20">
+                            {tag}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   </div>
