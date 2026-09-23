@@ -91,7 +91,7 @@ const Home = () => {
               <div className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-full border border-purple-500/30 mb-4 sm:mb-6">
                 <span className="text-purple-300 text-xs sm:text-sm font-medium flex items-center gap-2">
                   <Briefcase className="w-3 h-3 sm:w-4 sm:h-4" />
-                  Training Software Engineer at CodeGen International
+                  Trainee Software Engineer at CodeGen International
                 </span>
               </div>
 
@@ -228,7 +228,7 @@ const Home = () => {
             Industrial <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Training</span>
           </h3>
           <p className="text-gray-400 text-center text-sm sm:text-base max-w-2xl mx-auto mb-8 sm:mb-12">
-            Training Software Engineer at CodeGen International, Colombo · Apr 2026 – Oct 2026
+            TraineeSoftware Engineer at CodeGen International, Colombo · Apr 2026 – Oct 2026
           </p>
 
           <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
