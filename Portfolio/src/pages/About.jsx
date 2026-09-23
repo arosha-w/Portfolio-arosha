@@ -65,7 +65,7 @@ const About = () => {
 
   const experiences = [
     {
-      title: "Training Software Engineer",
+      title: "Trainee Software Engineer",
       company: "CodeGen International (Pvt) Ltd · Colombo, Sri Lanka",
       duration: "Apr 2026 - Oct 2026",
       description:
