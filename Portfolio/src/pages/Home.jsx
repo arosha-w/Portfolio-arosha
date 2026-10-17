@@ -199,7 +199,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
             {[
-              { value: '5', label: 'Projects Built', color: 'from-purple-500 to-pink-500' },
+              { value: '5+', label: 'Projects Built', color: 'from-purple-500 to-pink-500' },
               { value: '6 mo', label: 'Industry Training', color: 'from-pink-500 to-red-500' },
               { value: '3.64', label: 'GPA / 4.00', color: 'from-green-500 to-emerald-500' },
               { value: '20+', label: 'Technologies', color: 'from-blue-500 to-cyan-500' },

@@ -181,7 +181,7 @@ const About = () => {
   const stats = [
     {
       label: "Projects Completed",
-      value: "5",
+      value: "5+",
       icon: Rocket,
       description: "Web, mobile and desktop",
       color: "from-purple-500 to-pink-500",
